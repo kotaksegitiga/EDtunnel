@@ -1,1 +1,1143 @@
-const a0_0x310665=a0_0x236b;(function(_0x108a54,_0x203c6f){const _0x41aa3b=a0_0x236b,_0x3eb076=_0x108a54();while(!![]){try{const _0x7634aa=parseInt(_0x41aa3b(0x21d))/0x1+-parseInt(_0x41aa3b(0x249))/0x2*(-parseInt(_0x41aa3b(0x1f9))/0x3)+parseInt(_0x41aa3b(0x250))/0x4*(parseInt(_0x41aa3b(0x1ff))/0x5)+-parseInt(_0x41aa3b(0x232))/0x6*(-parseInt(_0x41aa3b(0x276))/0x7)+-parseInt(_0x41aa3b(0x1c4))/0x8*(-parseInt(_0x41aa3b(0x202))/0x9)+parseInt(_0x41aa3b(0x1b5))/0xa+-parseInt(_0x41aa3b(0x270))/0xb;if(_0x7634aa===_0x203c6f)break;else _0x3eb076['push'](_0x3eb076['shift']());}catch(_0x1824d3){_0x3eb076['push'](_0x3eb076['shift']());}}}(a0_0x12a5,0xa19c1));import{connect}from'cloudflare:sockets';let userID=a0_0x310665(0x215);const proxyIPs=[a0_0x310665(0x1da),a0_0x310665(0x217),'workers.cloudflare.cyou'];let proxyIP=proxyIPs[Math[a0_0x310665(0x1de)](Math[a0_0x310665(0x228)]()*proxyIPs['length'])],socks5Address='',socks5Relay=![];if(!isValidUUID(userID))throw new Error('uuid\x20is\x20not\x20valid');let parsedSocks5Address={},enableSocks=![];export default{async 'fetch'(_0x5895d2,_0x43ab13,_0x3f0e12){const _0x10cea9=a0_0x310665;try{const {UUID:_0x3cf48d,PROXYIP:_0x5c27ad,SOCKS5:_0x3fcf2a,SOCKS5_RELAY:_0x132816}=_0x43ab13;userID=_0x3cf48d||userID,proxyIP=_0x5c27ad||proxyIP,socks5Address=_0x3fcf2a||socks5Address,socks5Relay=_0x132816||socks5Relay;if(socks5Address)try{parsedSocks5Address=socks5AddressParser(socks5Address),enableSocks=!![];}catch(_0x168c06){console[_0x10cea9(0x246)](_0x168c06[_0x10cea9(0x28c)]()),enableSocks=![];}const _0x1874f2=userID[_0x10cea9(0x1f4)](',')?userID[_0x10cea9(0x288)](',')[0x0]:userID,_0x41c79b=new URL(_0x5895d2['url']),_0x591237=_0x5895d2['headers'][_0x10cea9(0x1b3)](_0x10cea9(0x1e9));if(_0x5895d2['headers'][_0x10cea9(0x1b3)](_0x10cea9(0x230))!==_0x10cea9(0x227))switch(_0x41c79b[_0x10cea9(0x27b)]){case _0x10cea9(0x233):return new Response(JSON[_0x10cea9(0x27f)](_0x5895d2['cf'],null,0x4),{'status':0xc8,'headers':{'Content-Type':'application/json;charset=utf-8'}});case'/'+_0x1874f2:return new Response(getConfig(userID,_0x591237),{'status':0xc8,'headers':{'Content-Type':'text/html;\x20charset=utf-8'}});case _0x10cea9(0x20c)+_0x1874f2:return new Response(btoa(GenSub(userID,_0x591237)),{'status':0xc8,'headers':{'Content-Type':_0x10cea9(0x1e4)}});case _0x10cea9(0x1d1)+_0x1874f2:return fetch(_0x10cea9(0x272)+_0x591237+'&uuid='+userID+_0x10cea9(0x283),{'headers':_0x5895d2['headers']});default:return handleDefaultPath(_0x41c79b,_0x5895d2);}else return await ProtocolOverWSHandler(_0x5895d2);}catch(_0x210083){return new Response(_0x210083[_0x10cea9(0x28c)]());}}};async function handleDefaultPath(_0x4aabfe,_0xcbd08a){const _0x2c57bb=a0_0x310665,_0x35666c=hostnames[Math[_0x2c57bb(0x1de)](Math['random']()*hostnames[_0x2c57bb(0x224)])],_0x4062f4=new Headers(_0xcbd08a[_0x2c57bb(0x24a)]);_0x4062f4[_0x2c57bb(0x1dd)]('cf-connecting-ip',_0x2c57bb(0x205)),_0x4062f4[_0x2c57bb(0x1dd)]('x-forwarded-for','1.2.3.4'),_0x4062f4[_0x2c57bb(0x1dd)]('x-real-ip',_0x2c57bb(0x205)),_0x4062f4[_0x2c57bb(0x1dd)](_0x2c57bb(0x24d),_0x2c57bb(0x20d));const _0x6518d0='https://'+_0x35666c+_0x4aabfe[_0x2c57bb(0x27b)]+_0x4aabfe[_0x2c57bb(0x1ca)],_0x35149d=new Request(_0x6518d0,{'method':_0xcbd08a[_0x2c57bb(0x1d5)],'headers':_0x4062f4,'body':_0xcbd08a[_0x2c57bb(0x1bd)],'redirect':'manual'}),_0x2f2061=await fetch(_0x35149d,{'redirect':'manual'});if([0x12d,0x12e]['includes'](_0x2f2061[_0x2c57bb(0x209)]))return new Response(_0x2c57bb(0x26c)+_0x35666c+_0x2c57bb(0x261),{'status':0x193,'statusText':_0x2c57bb(0x210)});return _0x2f2061;}async function ProtocolOverWSHandler(_0x527805){const _0x4c2219=a0_0x310665,_0x3372e3=new WebSocketPair(),[_0x45a11f,_0x51b403]=Object[_0x4c2219(0x26a)](_0x3372e3);_0x51b403[_0x4c2219(0x1d0)]();let _0x408415='',_0x30990b='';const _0x43ad99=(_0x261737,_0x5a152d)=>{const _0x26869a=_0x4c2219;console[_0x26869a(0x246)]('['+_0x408415+':'+_0x30990b+']\x20'+_0x261737,_0x5a152d||'');},_0x5642b1=_0x527805['headers'][_0x4c2219(0x1b3)](_0x4c2219(0x1ba))||'',_0x591037=makeReadableWebSocketStream(_0x51b403,_0x5642b1,_0x43ad99);let _0x5b8218={'value':null},_0x5d65c9=![];return _0x591037[_0x4c2219(0x241)](new WritableStream({async 'write'(_0x12f2ff,_0xb78744){const _0xc32bb7=_0x4c2219;if(_0x5d65c9)return await handleDNSQuery(_0x12f2ff,_0x51b403,null,_0x43ad99);if(_0x5b8218[_0xc32bb7(0x231)]){const _0x49c081=_0x5b8218[_0xc32bb7(0x231)][_0xc32bb7(0x1ed)][_0xc32bb7(0x223)]();await _0x49c081[_0xc32bb7(0x21a)](_0x12f2ff),_0x49c081['releaseLock']();return;}const {hasError:_0x36dfd5,message:_0x33bd7b,addressType:_0x275fd7,portRemote:portRemote=0x1bb,addressRemote:addressRemote='',rawDataIndex:_0x1eadbb,ProtocolVersion:ProtocolVersion=new Uint8Array([0x0,0x0]),isUDP:_0x232bf1}=processProtocolHeader(_0x12f2ff,userID);_0x408415=addressRemote,_0x30990b=portRemote+'--'+Math['random']()+'\x20'+(_0x232bf1?_0xc32bb7(0x1b0):_0xc32bb7(0x23b))+'\x20';if(_0x36dfd5){throw new Error(_0x33bd7b);return;}if(_0x232bf1){if(portRemote===0x35)_0x5d65c9=!![];else{throw new Error(_0xc32bb7(0x25d));return;}}const _0xfac7b4=new Uint8Array([ProtocolVersion[0x0],0x0]),_0x483f58=_0x12f2ff['slice'](_0x1eadbb);if(_0x5d65c9)return handleDNSQuery(_0x483f58,_0x51b403,_0xfac7b4,_0x43ad99);handleTCPOutBound(_0x5b8218,_0x275fd7,addressRemote,portRemote,_0x483f58,_0x51b403,_0xfac7b4,_0x43ad99);},'close'(){const _0x27ebf3=_0x4c2219;_0x43ad99(_0x27ebf3(0x1dc));},'abort'(_0x3956f0){const _0x1679fc=_0x4c2219;_0x43ad99(_0x1679fc(0x256),JSON[_0x1679fc(0x27f)](_0x3956f0));}}))[_0x4c2219(0x1ee)](_0x1565c9=>{const _0x4e449e=_0x4c2219;_0x43ad99(_0x4e449e(0x247),_0x1565c9);}),new Response(null,{'status':0x65,'webSocket':_0x45a11f});}async function trojanOverWSHandler(_0x391123){const _0xcab0c=a0_0x310665,_0xaa5784=new WebSocketPair(),[_0x342f30,_0x132630]=Object[_0xcab0c(0x26a)](_0xaa5784);_0x132630[_0xcab0c(0x1d0)]();let _0x35a772='',_0xf8f2eb='';const _0x349aec=(_0x2dc502,_0x4b3ffe)=>{const _0x4318b0=_0xcab0c;console[_0x4318b0(0x246)]('['+_0x35a772+':'+_0xf8f2eb+']\x20'+_0x2dc502,_0x4b3ffe||'');},_0x5d1003=_0x391123[_0xcab0c(0x24a)][_0xcab0c(0x1b3)]('sec-websocket-protocol')||'',_0x4d112f=makeReadableWebSocketStream(_0x132630,_0x5d1003,_0x349aec);let _0x129d17={'value':null},_0x52b533=null;return _0x4d112f['pipeTo'](new WritableStream({async 'write'(_0xa33db2,_0x473f8a){const _0xa8140e=_0xcab0c;if(_0x52b533)return _0x52b533(_0xa33db2);if(_0x129d17[_0xa8140e(0x231)]){const _0x438aef=_0x129d17[_0xa8140e(0x231)][_0xa8140e(0x1ed)][_0xa8140e(0x223)]();await _0x438aef[_0xa8140e(0x21a)](_0xa33db2),_0x438aef[_0xa8140e(0x1f0)]();return;}const {hasError:_0x58370f,message:_0x4c8d5b,portRemote:portRemote=0x1bb,addressRemote:addressRemote='',rawClientData:_0x2800a1,addressType:_0x1dfa62}=await parseTrojanHeader(_0xa33db2);_0x35a772=addressRemote,_0xf8f2eb=portRemote+'--'+Math[_0xa8140e(0x228)]()+_0xa8140e(0x1f2);if(_0x58370f){throw new Error(_0x4c8d5b);return;}handleTCPOutBound(_0x129d17,addressRemote,portRemote,_0x2800a1,_0x132630,_0x349aec,_0x1dfa62);},'close'(){const _0x220f60=_0xcab0c;_0x349aec(_0x220f60(0x1b1));},'abort'(_0x298e93){const _0x5d1584=_0xcab0c;_0x349aec(_0x5d1584(0x27e),JSON[_0x5d1584(0x27f)](_0x298e93));}}))[_0xcab0c(0x1ee)](_0x42413b=>{const _0x2d3b52=_0xcab0c;_0x349aec(_0x2d3b52(0x247),_0x42413b);}),new Response(null,{'status':0x65,'webSocket':_0x342f30});}async function handleTCPOutBound(_0x29dab7,_0x4d80d6,_0x53d776,_0x2b1509,_0x57e46b,_0x34c160,_0x7193cb,_0x4b03f1){async function _0x52fa49(_0x5c90f6,_0x33a922,_0x508528=![]){const _0x2a20b1=a0_0x236b;let _0x393df1;socks5Relay?_0x393df1=await socks5Connect(_0x4d80d6,_0x5c90f6,_0x33a922,_0x4b03f1):_0x393df1=_0x508528?await socks5Connect(_0x4d80d6,_0x5c90f6,_0x33a922,_0x4b03f1):connect({'hostname':_0x5c90f6,'port':_0x33a922});_0x29dab7[_0x2a20b1(0x231)]=_0x393df1,_0x4b03f1('connected\x20to\x20'+_0x5c90f6+':'+_0x33a922);const _0xaf832c=_0x393df1[_0x2a20b1(0x1ed)][_0x2a20b1(0x223)]();return await _0xaf832c['write'](_0x57e46b),_0xaf832c[_0x2a20b1(0x1f0)](),_0x393df1;}async function _0xd892af(){const _0x3d2609=a0_0x236b;enableSocks?_0x291c08=await _0x52fa49(_0x53d776,_0x2b1509,!![]):_0x291c08=await _0x52fa49(proxyIP||_0x53d776,_0x2b1509),_0x291c08[_0x3d2609(0x211)][_0x3d2609(0x1ee)](_0x4f4edd=>{const _0x548e61=_0x3d2609;console[_0x548e61(0x246)]('retry\x20tcpSocket\x20closed\x20error',_0x4f4edd);})[_0x3d2609(0x212)](()=>{safeCloseWebSocket(_0x34c160);}),remoteSocketToWS(_0x291c08,_0x34c160,_0x7193cb,null,_0x4b03f1);}let _0x291c08=await _0x52fa49(_0x53d776,_0x2b1509);remoteSocketToWS(_0x291c08,_0x34c160,_0x7193cb,_0xd892af,_0x4b03f1);}function makeReadableWebSocketStream(_0x3a85e9,_0x474849,_0x23f1aa){let _0x543902=![];const _0x232eb2=new ReadableStream({'start'(_0x4d453f){const _0x116e3b=a0_0x236b;_0x3a85e9[_0x116e3b(0x22f)](_0x116e3b(0x28b),_0x327e0c=>{const _0x45befa=_0x327e0c['data'];_0x4d453f['enqueue'](_0x45befa);}),_0x3a85e9[_0x116e3b(0x22f)](_0x116e3b(0x23e),()=>{const _0x42c61d=_0x116e3b;safeCloseWebSocket(_0x3a85e9),_0x4d453f[_0x42c61d(0x23e)]();}),_0x3a85e9[_0x116e3b(0x22f)](_0x116e3b(0x201),_0x587380=>{const _0x3edb8b=_0x116e3b;_0x23f1aa(_0x3edb8b(0x216)),_0x4d453f[_0x3edb8b(0x201)](_0x587380);});const {earlyData:_0x1937f6,error:_0x5b7332}=base64ToArrayBuffer(_0x474849);if(_0x5b7332)_0x4d453f[_0x116e3b(0x201)](_0x5b7332);else _0x1937f6&&_0x4d453f[_0x116e3b(0x22c)](_0x1937f6);},'pull'(_0x2e0267){},'cancel'(_0x70aa48){const _0x1ce5da=a0_0x236b;_0x23f1aa(_0x1ce5da(0x221)+_0x70aa48),_0x543902=!![],safeCloseWebSocket(_0x3a85e9);}});return _0x232eb2;}function processProtocolHeader(_0x1a3894,_0x3834d1){const _0x3311ae=a0_0x310665;if(_0x1a3894[_0x3311ae(0x1bc)]<0x18)return{'hasError':!![],'message':_0x3311ae(0x1d7)};const _0x28fdd0=new DataView(_0x1a3894),_0x3d1c94=_0x28fdd0[_0x3311ae(0x26d)](0x0),_0x19511e=stringify(new Uint8Array(_0x1a3894['slice'](0x1,0x11))),_0x4951e5=_0x3834d1[_0x3311ae(0x1f4)](',')?_0x3834d1[_0x3311ae(0x288)](','):[_0x3834d1],_0x1e7abe=_0x4951e5[_0x3311ae(0x258)](_0x5f14a0=>_0x19511e===_0x5f14a0[_0x3311ae(0x1b8)]())||_0x4951e5[_0x3311ae(0x224)]===0x1&&_0x19511e===_0x4951e5[0x0][_0x3311ae(0x1b8)]();console[_0x3311ae(0x246)]('userID:\x20'+_0x19511e);if(!_0x1e7abe)return{'hasError':!![],'message':_0x3311ae(0x21f)};const _0x313c0a=_0x28fdd0[_0x3311ae(0x26d)](0x11),_0x1ee60d=_0x28fdd0['getUint8'](0x12+_0x313c0a);if(_0x1ee60d!==0x1&&_0x1ee60d!==0x2)return{'hasError':!![],'message':_0x3311ae(0x28a)+_0x1ee60d+_0x3311ae(0x20e)};const _0x740023=0x12+_0x313c0a+0x1,_0x27a051=_0x28fdd0[_0x3311ae(0x263)](_0x740023),_0x5631b8=_0x28fdd0['getUint8'](_0x740023+0x2);let _0x1c52a9,_0x27e0e8,_0x2f3b23;switch(_0x5631b8){case 0x1:_0x27e0e8=0x4,_0x2f3b23=_0x740023+0x3,_0x1c52a9=new Uint8Array(_0x1a3894['slice'](_0x2f3b23,_0x2f3b23+_0x27e0e8))[_0x3311ae(0x21e)]('.');break;case 0x2:_0x27e0e8=_0x28fdd0['getUint8'](_0x740023+0x3),_0x2f3b23=_0x740023+0x4,_0x1c52a9=new TextDecoder()[_0x3311ae(0x235)](_0x1a3894[_0x3311ae(0x28e)](_0x2f3b23,_0x2f3b23+_0x27e0e8));break;case 0x3:_0x27e0e8=0x10,_0x2f3b23=_0x740023+0x3,_0x1c52a9=Array[_0x3311ae(0x206)]({'length':0x8},(_0x2dd90e,_0x4054ce)=>_0x28fdd0[_0x3311ae(0x263)](_0x2f3b23+_0x4054ce*0x2)[_0x3311ae(0x28c)](0x10))['join'](':');break;default:return{'hasError':!![],'message':_0x3311ae(0x1be)+_0x5631b8};}if(!_0x1c52a9)return{'hasError':!![],'message':_0x3311ae(0x275)+_0x5631b8};return{'hasError':![],'addressRemote':_0x1c52a9,'addressType':_0x5631b8,'portRemote':_0x27a051,'rawDataIndex':_0x2f3b23+_0x27e0e8,'protocolVersion':new Uint8Array([_0x3d1c94]),'isUDP':_0x1ee60d===0x2};}async function remoteSocketToWS(_0x210215,_0x4fb919,_0x39909d,_0x3b756c,_0xe893c){const _0x49302d=a0_0x310665;let _0x35e81a=![];try{await _0x210215[_0x49302d(0x1ea)][_0x49302d(0x241)](new WritableStream({async 'write'(_0xd8cebf){const _0xf0c280=_0x49302d;if(_0x4fb919[_0xf0c280(0x1ae)]!==WS_READY_STATE_OPEN)throw new Error(_0xf0c280(0x21c));_0x35e81a=!![],_0x39909d?(_0x4fb919[_0xf0c280(0x22a)](await new Blob([_0x39909d,_0xd8cebf])[_0xf0c280(0x225)]()),_0x39909d=null):_0x4fb919[_0xf0c280(0x22a)](_0xd8cebf);},'close'(){const _0x4ad0fd=_0x49302d;_0xe893c(_0x4ad0fd(0x1eb)+_0x35e81a);},'abort'(_0x355a20){const _0x3d90c8=_0x49302d;console[_0x3d90c8(0x201)]('Remote\x20connection\x20readable\x20aborted:',_0x355a20);}}));}catch(_0xc6848a){console[_0x49302d(0x201)](_0x49302d(0x277),_0xc6848a[_0x49302d(0x218)]||_0xc6848a),safeCloseWebSocket(_0x4fb919);}!_0x35e81a&&_0x3b756c&&(_0xe893c(_0x49302d(0x1f6)),await _0x3b756c());}function base64ToArrayBuffer(_0x20a386){const _0x2b5c1e=a0_0x310665;if(!_0x20a386)return{'earlyData':null,'error':null};try{_0x20a386=_0x20a386['replace'](/-/g,'+')['replace'](/_/g,'/');const _0x593205=atob(_0x20a386),_0x57eedc=new ArrayBuffer(_0x593205[_0x2b5c1e(0x224)]),_0x440dee=new Uint8Array(_0x57eedc);for(let _0x3a33ce=0x0;_0x3a33ce<_0x593205[_0x2b5c1e(0x224)];_0x3a33ce++){_0x440dee[_0x3a33ce]=_0x593205[_0x2b5c1e(0x222)](_0x3a33ce);}return{'earlyData':_0x57eedc,'error':null};}catch(_0x56a013){return{'earlyData':null,'error':_0x56a013};}}function isValidUUID(_0x2b3e02){const _0x57b515=a0_0x310665,_0x246e5c=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;return _0x246e5c[_0x57b515(0x262)](_0x2b3e02);}const WS_READY_STATE_OPEN=0x1,WS_READY_STATE_CLOSING=0x2;function safeCloseWebSocket(_0x3f1f2b){const _0x4ea3e4=a0_0x310665;try{(_0x3f1f2b[_0x4ea3e4(0x1ae)]===WS_READY_STATE_OPEN||_0x3f1f2b[_0x4ea3e4(0x1ae)]===WS_READY_STATE_CLOSING)&&_0x3f1f2b['close']();}catch(_0x2bcb0e){console['error'](_0x4ea3e4(0x281),_0x2bcb0e);}}function a0_0x12a5(){const _0x2dba97=['/bestip/','www.eyny.com','www.renren.com','?encryption=none&security=tls&sni=','method','www.mafengwo.cn','invalid\x20data','socks\x20server\x20needs\x20auth','handleDNSQuery\x20have\x20exception,\x20error:\x20','cdn.xn--b6gac.eu.org','dmxlc3M=','readableWebSocketStream\x20is\x20close','set','floor','www.163.com','wsSettings','www.cnblogs.com','www.guancha.cn','www.qidian.com','text/plain;charset=utf-8','www.toutiao.io','https://url.v1.mk/sub?target=clash&url=',')\x20tcp\x20is\x20abort','toLowerCase','Host','readable','Remote\x20connection\x20readable\x20closed.\x20Had\x20incoming\x20data:\x20','POST','writable','catch','www.hupu.com','releaseLock','www.51cto.com','\x20tcp','Invalid\x20address\x20type:\x20','includes','https://','No\x20incoming\x20data,\x20retrying','www.tiktok.com','network','5178QsuCdY','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-bolt\x22></i>\x20Clash\x20Link</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','www.youth.cn','www.panda.tv','\x0a\x20\x20\x20\x20<div\x20class=\x22container\x22>\x0a\x20\x20\x20\x20\x20\x20<h1>EDtunnel:\x20Protocol\x20Configuration</h1>\x0a\x20\x20\x20\x20\x20\x20<img\x20src=\x22https://ipfs.io/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky\x22\x20alt=\x22EDtunnel\x20Logo\x22\x20class=\x22logo\x22>\x0a\x20\x20\x20\x20\x20\x20<p>Welcome!\x20This\x20function\x20generates\x20configuration\x20for\x20the\x20vless\x20protocol.\x20If\x20you\x20found\x20this\x20useful,\x20please\x20check\x20our\x20GitHub\x20project:</p>\x0a\x20\x20\x20\x20\x20\x20<p><a\x20href=\x22https://github.com/6Kmfi6HP/EDtunnel\x22\x20target=\x22_blank\x22\x20style=\x22color:\x20#00ff00;\x22>EDtunnel\x20-\x20https://github.com/6Kmfi6HP/EDtunnel</a></p>\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22clear:\x20both;\x22></div>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22btn-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22//','8.8.4.4','5hNBMcL',')\x20tcp\x20is\x20close','error','36216XDTrQj','www.58.com','fail\x20to\x20open\x20socks\x20connection','1.2.3.4','from','The\x20SNI\x20is\x20different\x20from\x20the\x20server\x20address,\x20this\x20is\x20unsupported\x20due\x20to\x20Cloudflare\x20API\x20restrictions','www.toutiao.com','status','substr','weibo.com','/sub/','https://www.google.com/search?q=edtunnel','\x20is\x20not\x20supported,\x20command\x2001-tcp,02-udp,03-mux','www.zhibo8.cc','Forbidden','closed','finally','Unsupported\x20command,\x20only\x20TCP\x20(CONNECT)\x20is\x20allowed','www.zhaopin.com','d342d11e-d424-4583-b36e-524ab1f0afa4','webSocketServer\x20has\x20error','cdn-all.xn--b6gac.eu.org','stack','tlsSettings','write','\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22container\x20config-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h2>UUID:\x20','WebSocket\x20is\x20not\x20open','115530LKnfkQ','join','invalid\x20user','www.dianyou.cn','ReadableStream\x20was\x20canceled,\x20due\x20to\x20','charCodeAt','getWriter','length','arrayBuffer','match','websocket','random','doh\x20success\x20and\x20dns\x20message\x20length\x20is\x20','send','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-bolt\x22></i>\x20Clash\x20Subscription</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','enqueue','www.meituan.com','invild\x20\x20addressType\x20is\x20','addEventListener','Upgrade','value','82206yNAkYr','/cf','byteOffset','decode','socks\x20connection\x20opened','www.pptv.com','tls',':443?encryption=none&security=tls&sni=','www.csdn.net','tcp\x20','pages.dev','-HTTP-','close','Invalid\x20SOCKS5\x20request\x20data','?encryption=none&security=none&fp=random&type=ws&host=','pipeTo','www.ttpaihang.com','www.zhangzishi.cc','substring','&fp=random&type=ws&host=','log','readableWebSocketStream\x20pipeTo\x20error','www.pconline.com.cn','1152koeUza','headers','www.dianping.com','\x0a\x20\x20<body>\x0a\x20\x20\x20\x20','referer','www.sohu.com','Stringified\x20UUID\x20is\x20invalid','1186508ShIMgP','DomainName','dns\x20udp\x20has\x20error','www.ted.com','connected\x20to\x20','Invalid\x20SOCKS\x20address\x20format','readableWebSocketStream\x20is\x20abort','queryParams','some','&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true','www.douyin.com','RUR0dW5uZWw=','/\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:image\x27\x20content=\x27https://ipfs.io/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:card\x27\x20content=\x27summary_large_image\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:title\x27\x20content=\x27EDtunnel\x20-\x20Protocol\x20Configuration\x20and\x20Subscribe\x20Output\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:description\x27\x20content=\x27Use\x20Cloudflare\x20Pages\x20and\x20Worker\x20serverless\x20to\x20implement\x20protocol\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:url\x27\x20content=\x27https://','UDP\x20proxy\x20only\x20enable\x20for\x20DNS\x20which\x20is\x20port\x2053','application/dns-message','socks\x20server\x20version\x20error:\x20','www.wechat.com','\x20are\x20not\x20allowed.','test','getUint16','www.881903.com','Unknown\x20address\x20type:\x20','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-link\x22></i>\x20VLESS\x20Subscription</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22clash://install-config?url=','IPv4','www.tmtpost.com','IPv6','values','www.tmall.com','Redirects\x20to\x20','getUint8','buffer','reverse','36917298PyLCoQ','Invalid\x20URL\x20format','https://sub.xf.free.hr/auto?host=','security','?ed=2048','addressValue\x20is\x20empty,\x20addressType\x20is\x20','560hCJdOL','remoteSocketToWS\x20error:','www.autohome.com.cn','www.quyaoya.com','serverName','pathname','replace','\x0a\x20\x20<html>\x0a\x20\x20','readableWebSocketStream\x20is\x20aborted','stringify','www.cntv.cn','safeCloseWebSocket\x20error:','www.suning.com','&path=/','sent\x20socks\x20request','\x0a\x20\x20</body>\x0a\x20\x20<script>\x0a\x20\x20\x20\x20function\x20copyToClipboard(text)\x20{\x0a\x20\x20\x20\x20\x20\x20navigator.clipboard.writeText(text)\x0a\x20\x20\x20\x20\x20\x20\x20\x20.then(()\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20alert(\x22Copied\x20to\x20clipboard\x22);\x0a\x20\x20\x20\x20\x20\x20\x20\x20})\x0a\x20\x20\x20\x20\x20\x20\x20\x20.catch((err)\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20console.error(\x22Failed\x20to\x20copy\x20to\x20clipboard:\x22,\x20err);\x0a\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x20\x20\x20\x20}\x0a\x20\x20</script>\x0a\x20\x20</html>','www.cnzz.com','www.hao123.com','split','&path=','command\x20','message','toString','Unsupported\x20outbound\x20stream\x20method:\x20','slice','www.kuaidi100.com','readyState','\x0a\x20\x20\x20\x20','udp\x20','readableWebSocketStream\x20is\x20closed','www.baidu.com','get','www.jd.com','9885140eeFzyW','map','www.qq.com','trim','flatMap','sec-websocket-protocol','encode','byteLength','body','invalid\x20addressType:\x20','www.youku.com','read','/\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:image\x27\x20content=\x27https://ipfs.io/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:image:width\x27\x20content=\x271500\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:image:height\x27\x20content=\x271500\x27\x20/>\x0a\x0a\x20\x20\x20\x20<style>\x0a\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x27Roboto\x27,\x20\x27Segoe\x20UI\x27,\x20Tahoma,\x20Geneva,\x20Verdana,\x20sans-serif;\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#000000;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20line-height:\x201.6;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x201200px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.container\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#111111;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x204px\x206px\x20rgba(255,\x20255,\x20255,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20h1,\x20h2\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.config-item\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#222222;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#333333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2015px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.config-item\x20h3\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#000000;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s,\x20color\x200.3s;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#cccccc;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn-group\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2010px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn-group\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-right:\x2010px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20pre\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#333333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#444444;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20white-space:\x20pre-wrap;\x0a\x20\x20\x20\x20\x20\x20\x20\x20word-wrap:\x20break-word;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#00ff00;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.logo\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20float:\x20left;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-right:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x09\x09max-width:\x2030%;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20@media\x20(max-width:\x20768px)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20.logo\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20float:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x2090%;\x20/*\x20Adjust\x20the\x20max-width\x20to\x20fit\x20within\x20the\x20container\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-group\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:\x20column;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-group\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.code-container\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20relative;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2015px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.code-container\x20pre\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-right:\x20100px;\x20/*\x20Make\x20space\x20for\x20the\x20button\x20*/\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.copy-btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20\x20\x20\x20\x20top:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20right:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x205px\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x200.8em;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#222222;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2015px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20h3\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x200;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20ul\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-left:\x2020px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20li\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2010px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20</style>\x0a\x20\x20\x20\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\x22>\x0a\x20\x20</head>\x0a\x20\x20','\x20expected:\x205','dns\x20server(','1048qgcAgb','www.liepin.com','www.jianshu.com','www.qqgongyi.com','://','www.douban.com','search','&path=%2F%3Fed%3D2048#','pop','www.360.cn','www.imgo.tv','?format=clash','accept'];a0_0x12a5=function(){return _0x2dba97;};return a0_0x12a5();}const byteToHex=Array['from']({'length':0x100},(_0x404774,_0x597510)=>(_0x597510+0x100)['toString'](0x10)[a0_0x310665(0x28e)](0x1));function unsafeStringify(_0x4755c9,_0x36efd3=0x0){const _0x22d6e5=a0_0x310665;return[byteToHex[_0x4755c9[_0x36efd3]],byteToHex[_0x4755c9[_0x36efd3+0x1]],byteToHex[_0x4755c9[_0x36efd3+0x2]],byteToHex[_0x4755c9[_0x36efd3+0x3]],'-',byteToHex[_0x4755c9[_0x36efd3+0x4]],byteToHex[_0x4755c9[_0x36efd3+0x5]],'-',byteToHex[_0x4755c9[_0x36efd3+0x6]],byteToHex[_0x4755c9[_0x36efd3+0x7]],'-',byteToHex[_0x4755c9[_0x36efd3+0x8]],byteToHex[_0x4755c9[_0x36efd3+0x9]],'-',byteToHex[_0x4755c9[_0x36efd3+0xa]],byteToHex[_0x4755c9[_0x36efd3+0xb]],byteToHex[_0x4755c9[_0x36efd3+0xc]],byteToHex[_0x4755c9[_0x36efd3+0xd]],byteToHex[_0x4755c9[_0x36efd3+0xe]],byteToHex[_0x4755c9[_0x36efd3+0xf]]][_0x22d6e5(0x21e)]('')[_0x22d6e5(0x1e8)]();}function stringify(_0x1b3b89,_0x1a0297=0x0){const _0x5cabd5=a0_0x310665,_0x3c22b4=unsafeStringify(_0x1b3b89,_0x1a0297);if(!isValidUUID(_0x3c22b4))throw new TypeError(_0x5cabd5(0x24f));return _0x3c22b4;}async function handleUDPOutBound(_0x18b6bc,_0x5df90d,_0x19ce50){const _0x4e2b23=a0_0x310665;let _0x1b4c24=![];const _0x469025=new TransformStream({'start'(_0x26d2ff){},'transform'(_0x5b694c,_0x121015){const _0x5d7943=a0_0x236b;for(let _0x396f4f=0x0;_0x396f4f<_0x5b694c['byteLength'];){const _0x16b1a8=_0x5b694c['slice'](_0x396f4f,_0x396f4f+0x2),_0x275c39=new DataView(_0x16b1a8)[_0x5d7943(0x263)](0x0),_0x57368d=new Uint8Array(_0x5b694c[_0x5d7943(0x28e)](_0x396f4f+0x2,_0x396f4f+0x2+_0x275c39));_0x396f4f=_0x396f4f+0x2+_0x275c39,_0x121015[_0x5d7943(0x22c)](_0x57368d);}},'flush'(_0x5c04fc){}});_0x469025[_0x4e2b23(0x1ea)]['pipeTo'](new WritableStream({async 'write'(_0x4faab4){const _0x5e04e7=_0x4e2b23,_0x583c50=await fetch(dohURL,{'method':_0x5e04e7(0x1ec),'headers':{'content-type':_0x5e04e7(0x25e)},'body':_0x4faab4}),_0x11ffc9=await _0x583c50[_0x5e04e7(0x225)](),_0x5a23ad=_0x11ffc9['byteLength'],_0x18a799=new Uint8Array([_0x5a23ad>>0x8&0xff,_0x5a23ad&0xff]);_0x18b6bc[_0x5e04e7(0x1ae)]===WS_READY_STATE_OPEN&&(_0x19ce50(_0x5e04e7(0x229)+_0x5a23ad),_0x1b4c24?_0x18b6bc[_0x5e04e7(0x22a)](await new Blob([_0x18a799,_0x11ffc9])[_0x5e04e7(0x225)]()):(_0x18b6bc[_0x5e04e7(0x22a)](await new Blob([_0x5df90d,_0x18a799,_0x11ffc9])['arrayBuffer']()),_0x1b4c24=!![]));}}))[_0x4e2b23(0x1ee)](_0x542387=>{const _0x48ef85=_0x4e2b23;_0x19ce50(_0x48ef85(0x252)+_0x542387);});const _0x513d29=_0x469025[_0x4e2b23(0x1ed)][_0x4e2b23(0x223)]();return{'write'(_0x4b9ba1){const _0x53485d=_0x4e2b23;_0x513d29[_0x53485d(0x21a)](_0x4b9ba1);}};}function a0_0x236b(_0x58fc89,_0x36be1a){const _0x12a512=a0_0x12a5();return a0_0x236b=function(_0x236b74,_0x4c05fe){_0x236b74=_0x236b74-0x1ad;let _0x19e6d7=_0x12a512[_0x236b74];return _0x19e6d7;},a0_0x236b(_0x58fc89,_0x36be1a);}async function handleDNSQuery(_0x332bca,_0x190fff,_0x1e5245,_0x1b5478){const _0x6acc76=a0_0x310665;try{const _0x575590=_0x6acc76(0x1fe),_0x3cbc2e=0x35;let _0x4f7b4a=_0x1e5245;const _0x1aa54f=connect({'hostname':_0x575590,'port':_0x3cbc2e});_0x1b5478(_0x6acc76(0x254)+_0x575590+':'+_0x3cbc2e);const _0x6f8c7d=_0x1aa54f['writable'][_0x6acc76(0x223)]();await _0x6f8c7d[_0x6acc76(0x21a)](_0x332bca),_0x6f8c7d[_0x6acc76(0x1f0)](),await _0x1aa54f[_0x6acc76(0x1ea)]['pipeTo'](new WritableStream({async 'write'(_0x1661bd){const _0x5032ab=_0x6acc76;_0x190fff[_0x5032ab(0x1ae)]===WS_READY_STATE_OPEN&&(_0x4f7b4a?(_0x190fff[_0x5032ab(0x22a)](await new Blob([_0x4f7b4a,_0x1661bd])[_0x5032ab(0x225)]()),_0x4f7b4a=null):_0x190fff[_0x5032ab(0x22a)](_0x1661bd));},'close'(){const _0x32f7c2=_0x6acc76;_0x1b5478(_0x32f7c2(0x1c3)+_0x575590+_0x32f7c2(0x200));},'abort'(_0x2ec398){const _0x3cba5a=_0x6acc76;console[_0x3cba5a(0x201)](_0x3cba5a(0x1c3)+_0x575590+_0x3cba5a(0x1e7),_0x2ec398);}}));}catch(_0x505dc1){console[_0x6acc76(0x201)](_0x6acc76(0x1d9)+_0x505dc1[_0x6acc76(0x28b)]);}}async function socks5Connect(_0x5a0083,_0x171a07,_0x2f4fc7,_0x2cf654){const _0xd0067e=a0_0x310665,{username:_0x8a9b40,password:_0x5ceb3d,hostname:_0x54aae6,port:_0x4018a5}=parsedSocks5Address,_0x10cf6c=connect({'hostname':_0x54aae6,'port':_0x4018a5}),_0x346d03=new Uint8Array([0x5,0x2,0x0,0x2]),_0x1fe828=_0x10cf6c[_0xd0067e(0x1ed)]['getWriter']();await _0x1fe828[_0xd0067e(0x21a)](_0x346d03),_0x2cf654('sent\x20socks\x20greeting');const _0x38e3a5=_0x10cf6c[_0xd0067e(0x1ea)]['getReader'](),_0x4461e1=new TextEncoder();let _0x1d0571=(await _0x38e3a5[_0xd0067e(0x1c0)]())[_0xd0067e(0x231)];if(_0x1d0571[0x0]!==0x5){_0x2cf654(_0xd0067e(0x25f)+_0x1d0571[0x0]+_0xd0067e(0x1c2));return;}if(_0x1d0571[0x1]===0xff){_0x2cf654('no\x20acceptable\x20methods');return;}if(_0x1d0571[0x1]===0x2){_0x2cf654(_0xd0067e(0x1d8));if(!_0x8a9b40||!_0x5ceb3d){_0x2cf654('please\x20provide\x20username/password');return;}const _0x366feb=new Uint8Array([0x1,_0x8a9b40['length'],..._0x4461e1['encode'](_0x8a9b40),_0x5ceb3d['length'],..._0x4461e1[_0xd0067e(0x1bb)](_0x5ceb3d)]);await _0x1fe828[_0xd0067e(0x21a)](_0x366feb),_0x1d0571=(await _0x38e3a5['read']())[_0xd0067e(0x231)];if(_0x1d0571[0x0]!==0x1||_0x1d0571[0x1]!==0x0){_0x2cf654('fail\x20to\x20auth\x20socks\x20server');return;}}let _0x563c2c;switch(_0x5a0083){case 0x1:_0x563c2c=new Uint8Array([0x1,..._0x171a07[_0xd0067e(0x288)]('.')[_0xd0067e(0x1b6)](Number)]);break;case 0x2:_0x563c2c=new Uint8Array([0x3,_0x171a07[_0xd0067e(0x224)],..._0x4461e1[_0xd0067e(0x1bb)](_0x171a07)]);break;case 0x3:_0x563c2c=new Uint8Array([0x4,..._0x171a07[_0xd0067e(0x288)](':')[_0xd0067e(0x1b9)](_0x31df0e=>[parseInt(_0x31df0e[_0xd0067e(0x28e)](0x0,0x2),0x10),parseInt(_0x31df0e[_0xd0067e(0x28e)](0x2),0x10)])]);break;default:_0x2cf654(_0xd0067e(0x22e)+_0x5a0083);return;}const _0x201444=new Uint8Array([0x5,0x1,0x0,..._0x563c2c,_0x2f4fc7>>0x8,_0x2f4fc7&0xff]);await _0x1fe828[_0xd0067e(0x21a)](_0x201444),_0x2cf654(_0xd0067e(0x284)),_0x1d0571=(await _0x38e3a5[_0xd0067e(0x1c0)]())[_0xd0067e(0x231)];if(_0x1d0571[0x1]===0x0)_0x2cf654(_0xd0067e(0x236));else{_0x2cf654(_0xd0067e(0x204));return;}return _0x1fe828[_0xd0067e(0x1f0)](),_0x38e3a5['releaseLock'](),_0x10cf6c;}function socks5AddressParser(_0x2c4833){const _0x5a3421=a0_0x310665;let [_0xa0e528,_0x59566e]=_0x2c4833[_0x5a3421(0x288)]('@')[_0x5a3421(0x26f)](),_0x384c66,_0x227a0f,_0x296faf,_0x22e140;if(_0x59566e){const _0x17fb33=_0x59566e[_0x5a3421(0x288)](':');if(_0x17fb33[_0x5a3421(0x224)]!==0x2)throw new Error(_0x5a3421(0x255));[_0x384c66,_0x227a0f]=_0x17fb33;}const _0x39f260=_0xa0e528[_0x5a3421(0x288)](':');_0x22e140=Number(_0x39f260[_0x5a3421(0x1cc)]());if(isNaN(_0x22e140))throw new Error(_0x5a3421(0x255));_0x296faf=_0x39f260['join'](':');const _0x2fff85=/^\[.*\]$/;if(_0x296faf[_0x5a3421(0x1f4)](':')&&!_0x2fff85['test'](_0x296faf))throw new Error('Invalid\x20SOCKS\x20address\x20format');return{'username':_0x384c66,'password':_0x227a0f,'hostname':_0x296faf,'port':_0x22e140};}async function parseTrojanHeader(_0x4012fb){const _0xb99d56=a0_0x310665;if(_0x4012fb[_0xb99d56(0x1bc)]<0x3a)return{'hasError':!![],'message':'Invalid\x20data\x20length'};const _0x18dc19=new DataView(_0x4012fb);if(_0x18dc19['getUint8'](0x38)!==0xd||_0x18dc19['getUint8'](0x39)!==0xa)return{'hasError':!![],'message':'Invalid\x20header\x20format\x20(missing\x20CR\x20LF)'};const _0x30e648=new TextDecoder()[_0xb99d56(0x235)](_0x4012fb['slice'](0x0,0x38));if(_0x30e648!==Sha256['sha224'](userID))return{'hasError':!![],'message':'Invalid\x20password'};const _0x469ec0=new DataView(_0x4012fb,0x3a);if(_0x469ec0[_0xb99d56(0x1bc)]<0x6)return{'hasError':!![],'message':_0xb99d56(0x23f)};if(_0x469ec0[_0xb99d56(0x26d)](0x0)!==0x1)return{'hasError':!![],'message':_0xb99d56(0x213)};const _0x3636e2=_0x469ec0[_0xb99d56(0x26d)](0x1);let _0x5e3ad8,_0x4245c5;switch(_0x3636e2){case 0x1:_0x5e3ad8=Array[_0xb99d56(0x206)](new Uint8Array(_0x469ec0['buffer'],_0x469ec0[_0xb99d56(0x234)]+0x2,0x4))['join']('.'),_0x4245c5=0x6;break;case 0x3:const _0x3dcac9=_0x469ec0['getUint8'](0x2);_0x5e3ad8=new TextDecoder()[_0xb99d56(0x235)](_0x469ec0[_0xb99d56(0x26e)]['slice'](_0x469ec0['byteOffset']+0x3,_0x469ec0[_0xb99d56(0x234)]+0x3+_0x3dcac9)),_0x4245c5=0x3+_0x3dcac9;break;case 0x4:_0x5e3ad8=Array[_0xb99d56(0x206)](new Uint8Array(_0x469ec0['buffer'],_0x469ec0[_0xb99d56(0x234)]+0x2,0x10))['map'](_0x6da01f=>_0x6da01f[_0xb99d56(0x28c)](0x10)['padStart'](0x2,'0'))[_0xb99d56(0x21e)](':')[_0xb99d56(0x27c)](/(:0)+:/,'::'),_0x4245c5=0x12;break;default:return{'hasError':!![],'message':_0xb99d56(0x1f3)+_0x3636e2};}const _0x3a1ffb=_0x469ec0[_0xb99d56(0x263)](_0x4245c5);return{'hasError':![],'address':_0x5e3ad8,'port':_0x3a1ffb,'data':_0x4012fb[_0xb99d56(0x28e)](0x3a+_0x4245c5+0x2)};}const VlessCmd={'TCP':0x1,'UDP':0x2,'MUX':0x3},VlessAddrType={'IPv4':0x1,'DomainName':0x2,'IPv6':0x3};function makeVlessReqHeader(_0x2661d7,_0x5d7e3f,_0x226d56,_0x4add76,_0x49576a){const _0x5e9ffd=a0_0x310665;let _0x3155cc,_0x396052;switch(_0x5d7e3f){case VlessAddrType[_0x5e9ffd(0x267)]:_0x3155cc=0x4;break;case VlessAddrType[_0x5e9ffd(0x251)]:_0x396052=new TextEncoder()[_0x5e9ffd(0x1bb)](_0x226d56),_0x3155cc=_0x396052[_0x5e9ffd(0x224)]+0x1;break;case VlessAddrType[_0x5e9ffd(0x269)]:_0x3155cc=0x10;break;default:throw new Error(_0x5e9ffd(0x265)+_0x5d7e3f);}const _0x394a9e=_0x49576a[_0x5e9ffd(0x27c)](/-/g,''),_0x22a083=0x1,_0x15f60d=new Uint8Array(0x16+_0x3155cc);_0x15f60d[0x0]=0x0;for(let _0x22f888=0x0;_0x22f888<_0x394a9e[_0x5e9ffd(0x224)];_0x22f888+=0x2){_0x15f60d[_0x22a083+_0x22f888/0x2]=parseInt(_0x394a9e[_0x5e9ffd(0x20a)](_0x22f888,0x2),0x10);}_0x15f60d[0x11]=0x0,_0x15f60d[0x12]=_0x2661d7,_0x15f60d[0x13]=_0x4add76>>0x8,_0x15f60d[0x14]=_0x4add76&0xff,_0x15f60d[0x15]=_0x5d7e3f;switch(_0x5d7e3f){case VlessAddrType[_0x5e9ffd(0x267)]:const _0xb39d13=_0x226d56['split']('.');for(let _0x296899=0x0;_0x296899<0x4;_0x296899++){_0x15f60d[0x16+_0x296899]=parseInt(_0xb39d13[_0x296899]);}break;case VlessAddrType[_0x5e9ffd(0x251)]:_0x15f60d[0x16]=_0x396052[_0x5e9ffd(0x224)],_0x15f60d['set'](_0x396052,0x17);break;case VlessAddrType[_0x5e9ffd(0x269)]:const _0x4112cc=ipv6[_0x5e9ffd(0x288)](':');for(let _0x36022e=0x0;_0x36022e<0x8;_0x36022e++){const _0x58e92e=parseInt(_0x4112cc[_0x36022e],0x10);_0x15f60d[_0x36022e*0x2+0x16]=_0x58e92e>>0x8,_0x15f60d[_0x36022e*0x2+0x17]=_0x58e92e&0xff;}break;default:throw new Error(_0x5e9ffd(0x265)+_0x5d7e3f);}return _0x15f60d;}function checkVlessConfig(_0x1ed5aa,_0x1d4834){const _0x151988=a0_0x310665;if(_0x1d4834[_0x151988(0x1f8)]!=='ws')throw new Error(_0x151988(0x28d)+_0x1d4834['network']+',\x20has\x20to\x20be\x20ws\x20(Websocket)');if(_0x1d4834[_0x151988(0x273)]!==_0x151988(0x238)&&_0x1d4834[_0x151988(0x273)]!=='none')throw new Error('Usupported\x20security\x20layer:\x20'+_0x1d4834['network']+',\x20has\x20to\x20be\x20none\x20or\x20tls.');if(_0x1d4834[_0x151988(0x1e0)]&&_0x1d4834['wsSettings'][_0x151988(0x24a)]&&_0x1d4834[_0x151988(0x1e0)]['headers'][_0x151988(0x1e9)]!==_0x1ed5aa)throw new Error('The\x20Host\x20field\x20in\x20the\x20http\x20header\x20is\x20different\x20from\x20the\x20server\x20address,\x20this\x20is\x20unsupported\x20due\x20to\x20Cloudflare\x20API\x20restrictions');if(_0x1d4834[_0x151988(0x219)]&&_0x1d4834[_0x151988(0x219)][_0x151988(0x27a)]!==_0x1ed5aa)throw new Error(_0x151988(0x207));}function parseVlessString(_0x104d69){const _0x112789=a0_0x310665,_0x519eec=/^(.+):\/\/(.+?)@(.+?):(\d+)(\?[^#]*)?(#.*)?$/,_0x344b26=_0x104d69[_0x112789(0x226)](_0x519eec);if(!_0x344b26)throw new Error(_0x112789(0x271));const [,_0x37444d,_0x330711,_0x233279,_0x474133,_0x88ad12,_0x29fca8]=_0x344b26,_0x4d7647={'protocol':_0x37444d,'uuid':_0x330711,'remoteHost':_0x233279,'remotePort':parseInt(_0x474133),'descriptiveText':_0x29fca8?_0x29fca8['substring'](0x1):'','queryParams':{}};if(_0x88ad12){const _0x69edd6=_0x88ad12[_0x112789(0x244)](0x1)['split']('&');_0x69edd6['forEach'](_0x19a5ba=>{const _0x188edf=_0x112789,[_0x3eff75,_0x2e5c75]=_0x19a5ba[_0x188edf(0x288)]('=');_0x4d7647[_0x188edf(0x257)][_0x3eff75]=_0x2e5c75;});}return _0x4d7647;}const at='QA==',pt=a0_0x310665(0x1db),ed=a0_0x310665(0x25b);function getConfig(_0x235e3b,_0x10c871){const _0x55f77b=a0_0x310665,_0x38641f=_0x55f77b(0x239)+_0x10c871+'&fp=randomized&type=ws&host='+_0x10c871+_0x55f77b(0x1cb)+_0x10c871,_0x251e43=_0x235e3b[_0x55f77b(0x288)](','),_0x55f367='https://'+_0x10c871+'/sub/'+_0x251e43[0x0]+'?format=clash',_0x1a21f4=_0x55f77b(0x1f5)+_0x10c871+'/bestip/'+_0x251e43[0x0],_0x12ad9a=_0x55f77b(0x1e6)+encodeURIComponent(_0x55f367)+_0x55f77b(0x259),_0x1a1b77='\x0a\x20\x20<head>\x0a\x20\x20\x20\x20<title>EDtunnel:\x20Configuration</title>\x0a\x20\x20\x20\x20<meta\x20name=\x27viewport\x27\x20content=\x27width=device-width,\x20initial-scale=1\x27>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:site_name\x27\x20content=\x27EDtunnel:\x20Protocol\x20Configuration\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:type\x27\x20content=\x27website\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:title\x27\x20content=\x27EDtunnel\x20-\x20Protocol\x20Configuration\x20and\x20Subscribe\x20Output\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:description\x27\x20content=\x27Use\x20Cloudflare\x20Pages\x20and\x20Worker\x20serverless\x20to\x20implement\x20protocol\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:url\x27\x20content=\x27https://'+_0x10c871+_0x55f77b(0x25c)+_0x10c871+_0x55f77b(0x1c1),_0x5428e8=_0x55f77b(0x1fd)+_0x10c871+_0x55f77b(0x20c)+_0x251e43[0x0]+_0x55f77b(0x266)+encodeURIComponent(_0x55f77b(0x1f5)+_0x10c871+_0x55f77b(0x20c)+_0x251e43[0x0]+_0x55f77b(0x1cf))+_0x55f77b(0x22b)+_0x12ad9a+_0x55f77b(0x1fa)+_0x1a21f4+'\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-star\x22></i>\x20Best\x20IP\x20Subscription</a>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22subscription-info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>Options\x20Explained:</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>VLESS\x20Subscription:</strong>\x20Direct\x20link\x20for\x20VLESS\x20protocol\x20configuration.\x20Suitable\x20for\x20clients\x20supporting\x20VLESS.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>Clash\x20Subscription:</strong>\x20Opens\x20the\x20Clash\x20client\x20with\x20pre-configured\x20settings.\x20Best\x20for\x20Clash\x20users\x20on\x20mobile\x20devices.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>Clash\x20Link:</strong>\x20A\x20web\x20link\x20to\x20convert\x20the\x20VLESS\x20config\x20to\x20Clash\x20format.\x20Useful\x20for\x20manual\x20import\x20or\x20troubleshooting.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>Best\x20IP\x20Subscription:</strong>\x20Provides\x20a\x20curated\x20list\x20of\x20optimal\x20server\x20IPs\x20for\x20many\x20<b>different\x20countries</b>.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p>Choose\x20the\x20option\x20that\x20best\x20fits\x20your\x20client\x20and\x20needs.\x20For\x20most\x20users,\x20the\x20VLESS\x20or\x20Clash\x20Subscription\x20will\x20be\x20the\x20easiest\x20to\x20use.</p>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20',_0x1861da=_0x251e43['map'](_0x2caeb3=>{const _0x2b808f=_0x55f77b,_0x4cd3f3=atob(pt)+_0x2b808f(0x1c8)+_0x2caeb3+atob(at)+_0x10c871+_0x38641f,_0x33bc38=atob(pt)+'://'+_0x2caeb3+atob(at)+proxyIP+_0x38641f;return _0x2b808f(0x21b)+_0x2caeb3+'</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>Default\x20IP\x20Configuration</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<pre><code>'+_0x4cd3f3+'</code></pre>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20copy-btn\x22\x20onclick=\x27copyToClipboard(\x22'+_0x4cd3f3+'\x22)\x27><i\x20class=\x22fas\x20fa-copy\x22></i>\x20Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>Best\x20IP\x20Configuration</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<pre><code>'+_0x33bc38+'</code></pre>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20copy-btn\x22\x20onclick=\x27copyToClipboard(\x22'+_0x33bc38+'\x22)\x27><i\x20class=\x22fas\x20fa-copy\x22></i>\x20Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';})[_0x55f77b(0x21e)]('');return _0x55f77b(0x27d)+_0x1a1b77+_0x55f77b(0x24c)+_0x5428e8+_0x55f77b(0x1af)+_0x1861da+_0x55f77b(0x285);}const HttpPort=new Set([0x50,0x1f90,0x22b0,0x804,0x826,0x82f,0x822]),HttpsPort=new Set([0x1bb,0x20fb,0x805,0x830,0x827,0x823]);function GenSub(_0x3f204f,_0x6bca58){const _0x2b5c73=a0_0x310665,_0x5d8dfd=_0x3f204f[_0x2b5c73(0x1f4)](',')?_0x3f204f['split'](','):[_0x3f204f],_0x458207=()=>'/'+Math[_0x2b5c73(0x228)]()['toString'](0x24)[_0x2b5c73(0x244)](0x2,0xf)+_0x2b5c73(0x274),_0x57c56c=_0x2b5c73(0x240)+_0x6bca58+_0x2b5c73(0x289)+encodeURIComponent(_0x458207())+'#',_0x23c137=_0x2b5c73(0x1d4)+_0x6bca58+_0x2b5c73(0x245)+_0x6bca58+_0x2b5c73(0x1cb),_0x1fe04f=_0x5d8dfd['flatMap'](_0x12328c=>{const _0x14cd9e=_0x2b5c73,_0x3335aa=Array['from'](HttpPort)[_0x14cd9e(0x1b9)](_0x91fd5b=>{const _0x3af0f7=_0x14cd9e;if(!_0x6bca58[_0x3af0f7(0x1f4)](_0x3af0f7(0x23c))){const _0x1861e7=_0x6bca58+_0x3af0f7(0x23d)+_0x91fd5b,_0x4bb673=atob(pt)+_0x3af0f7(0x1c8)+_0x12328c+atob(at)+_0x6bca58+':'+_0x91fd5b+_0x57c56c+_0x1861e7;return proxyIPs[_0x3af0f7(0x1b9)](_0x28780d=>{const _0x1c5edc=atob(pt)+'://'+_0x12328c+atob(at)+_0x28780d+':'+_0x91fd5b+_0x57c56c+_0x1861e7+'-'+_0x28780d+'-'+atob(ed);return[_0x4bb673,_0x1c5edc];});}return[];}),_0x1389ee=Array[_0x14cd9e(0x206)](HttpsPort)['flatMap'](_0x5413c4=>{const _0x437d56=_0x14cd9e,_0x217950=_0x6bca58+'-HTTPS-'+_0x5413c4,_0x2225a0=atob(pt)+_0x437d56(0x1c8)+_0x12328c+atob(at)+_0x6bca58+':'+_0x5413c4+_0x23c137+_0x217950;return proxyIPs[_0x437d56(0x1b9)](_0x454b7d=>{const _0x1ff4cf=_0x437d56,_0x22f9d8=atob(pt)+_0x1ff4cf(0x1c8)+_0x12328c+atob(at)+_0x454b7d+':'+_0x5413c4+_0x23c137+_0x217950+'-'+_0x454b7d+'-'+atob(ed);return[_0x2225a0,_0x22f9d8];});});return[..._0x3335aa,..._0x1389ee];});return _0x1fe04f[_0x2b5c73(0x21e)]('\x0a');}const hostnames=[a0_0x310665(0x20b),a0_0x310665(0x1b2),a0_0x310665(0x1b7),'www.taobao.com',a0_0x310665(0x1b4),'www.sina.com.cn',a0_0x310665(0x24e),a0_0x310665(0x26b),a0_0x310665(0x1df),'www.zhihu.com',a0_0x310665(0x1bf),'www.xinhuanet.com',a0_0x310665(0x1c9),a0_0x310665(0x22d),a0_0x310665(0x208),'www.ifeng.com',a0_0x310665(0x278),a0_0x310665(0x1cd),a0_0x310665(0x25a),a0_0x310665(0x1ad),a0_0x310665(0x260),a0_0x310665(0x23a),a0_0x310665(0x1ce),'www.aliyun.com',a0_0x310665(0x1d2),'www.mgtv.com','www.xunlei.com',a0_0x310665(0x287),'www.bilibili.com',a0_0x310665(0x1fb),a0_0x310665(0x1ef),'www.youzu.com',a0_0x310665(0x1fc),'www.tudou.com','www.zol.com.cn',a0_0x310665(0x1e5),a0_0x310665(0x1f7),'www.netease.com','www.cnki.net',a0_0x310665(0x20f),a0_0x310665(0x243),'www.xueqiu.com',a0_0x310665(0x1c7),'www.ximalaya.com',a0_0x310665(0x24b),a0_0x310665(0x282),a0_0x310665(0x214),a0_0x310665(0x1c6),a0_0x310665(0x1d6),a0_0x310665(0x1f1),a0_0x310665(0x1e3),'www.ctrip.com',a0_0x310665(0x248),a0_0x310665(0x286),'www.telegraph.co.uk','www.ynet.com',a0_0x310665(0x253),a0_0x310665(0x1d3),a0_0x310665(0x237),a0_0x310665(0x1c5),a0_0x310665(0x264),'www.aipai.com',a0_0x310665(0x242),a0_0x310665(0x279),'www.91.com',a0_0x310665(0x220),a0_0x310665(0x268),a0_0x310665(0x1c9),a0_0x310665(0x1e2),'www.so.com',a0_0x310665(0x203),a0_0x310665(0x1e1),a0_0x310665(0x280),'www.secoo.com'];
+// <!--GAMFC-->version base on commit 841ed4e9ff121dde0ed6a56ae800c2e6c4f66056, time is 2024-04-16 18:02:37 UTC<!--GAMFC-END-->.
+// @ts-ignore
+import { connect } from 'cloudflare:sockets';
+const listBugs = [
+'kurang? dm t.me/bexnxx',
+'ava.game.naver.com',
+'graph.instagram.com',
+'investors.spotify.com',
+'zaintest.vuclip.com',
+'quiz.int.vidio.com',
+'support.zoom.us',
+];
+const listProxy = [
+{ path: '/id1', proxy: '34.34.217.201' },
+{ path: '/id2', proxy: '35.219.15.90' },
+{ path: '/id3', proxy: '172.232.238.169' },
+{ path: '/id4', proxy: '35.219.50.99' },
+{ path: '/sg1', proxy: '178.128.91.137' },
+{ path: '/sg2', proxy: '45.60.186.91' },
+{ path: '/sg3', proxy: '172.104.191.203' },
+{ path: '/sg4', proxy: '5.223.41.89' },
+{ path: '/sg5', proxy: '143.198.213.197' },
+];
+const apiCheck = 'https://api.bexnxx.us.to/api?ip=';
+let proxyIP;
+let randomProxy;
+
+async function getActiveProxy() {
+  let selectedProxy;
+  do {
+    selectedProxy = listProxy[Math.floor(Math.random() * listProxy.length)].proxy;
+    const response = await fetch('https://api.bexnxx.us.to/api?ip=' + selectedProxy);
+    const data = await response.json();
+    if (data.proxyStatus === 'ACTIVE') {
+      return selectedProxy;
+    }
+  } while (true);
+}
+
+async function updateRandomProxy() {
+  randomProxy = await getActiveProxy();
+}
+
+export default {
+  async fetch(request, ctx) {
+    try {
+      const url = new URL(request.url);
+      const upgradeHeader = request.headers.get('Upgrade');
+      if (url.pathname === '/') {
+        const allConfig = await getAllConfigVless(request.headers.get('Host'));
+        return new Response(allConfig, {
+          status: 200,
+          headers: { "Content-Type": "text/html;charset=utf-8" },
+        });
+      }
+      if (upgradeHeader === 'websocket' && url.pathname === '/rotate') {
+        if (!randomProxy) {
+          randomProxy = await getActiveProxy();
+          setInterval(updateRandomProxy, 300000);
+        }
+        proxyIP = randomProxy;
+        return await vlessOverWSHandler(request);
+      }
+      for (const entry of listProxy) {
+        if (url.pathname === entry.path) {
+          proxyIP = entry.proxy;
+          break;
+        }
+      }
+      if (upgradeHeader === 'websocket' && proxyIP) {
+        return await vlessOverWSHandler(request);
+      }
+      if (url.pathname === '/allstatus') {
+        let results = {};
+        for (const entry of listProxy) {
+          const apiResponse = await fetch(apiCheck + entry.proxy);
+          const apiData = await apiResponse.json();
+          results[entry.path] = {
+            isp: apiData.isp || null,
+            country: apiData.country || null,
+            proxyStatus: apiData.proxyStatus || null,
+          };
+        }
+        return new Response(JSON.stringify(results, null, 2), {
+          status: 200,
+          headers: { "Content-Type": "application/json;charset=utf-8" },
+        });
+      }
+      if (proxyIP) {
+        const apiResponse = await fetch(apiCheck + proxyIP);
+        const apiData = await apiResponse.json();
+        const result = {
+          isp: apiData.isp || null,
+          country: apiData.country || null,
+          proxyStatus: apiData.proxyStatus || null,
+        };
+        return new Response(JSON.stringify(result, null, 2), {
+          status: 200,
+          headers: { "Content-Type": "application/json;charset=utf-8" },
+        });
+      }
+      return fetch(request);
+    } catch (err) {
+      return new Response(err.toString(), { status: 500 });
+    }
+  },
+};
+
+async function getAllConfigVless(hostName) {
+    try {
+        let vlessConfigs = '';
+        let clashConfigs = '';
+        for (const entry of listProxy) {
+            const { path, proxy } = entry;
+            const response = await fetch(`https://ipwhois.app/json/${proxy}`);
+            const data = await response.json();
+            const pathFixed = encodeURIComponent(path);
+            const vlessTls = `vless://${generateUUIDv4()}\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=${pathFixed}#${data.isp} (${data.country_code})`;
+            const vlessNtls = `vless://${generateUUIDv4()}\u0040${hostName}:80?path=${pathFixed}&security=none&encryption=none&host=${hostName}&fp=randomized&type=ws&sni=${hostName}#${data.isp} (${data.country_code})`;
+            const vlessTlsFixed = vlessTls.replace(/ /g, '+');
+            const vlessNtlsFixed = vlessNtls.replace(/ /g, '+');
+            const clashConfTls = 
+`- name: ${data.isp} (${data.country_code})
+  server: ${hostName}
+  port: 443
+  type: vless
+  uuid: ${generateUUIDv4()}
+  cipher: auto
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  network: ws
+  servername: ${hostName}
+  ws-opts:
+    path: ${path}
+    headers:
+      Host: ${hostName}`;
+             const clashConfNtls =
+`- name: ${data.isp} (${data.country_code})
+  server: ${hostName}
+  port: 80
+  type: vless
+  uuid: ${generateUUIDv4()}
+  cipher: auto
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: ${path}
+    headers:
+      Host: ${hostName}`;
+            clashConfigs +=
+`<div style="display: none;">
+   <textarea id="clashTls${path}">${clashConfTls}</textarea>
+ </div>
+<div style="display: none;">
+   <textarea id="clashNtls${path}">${clashConfNtls}</textarea>
+ </div>
+<div class="config-section">
+    <p><strong>ISP:</strong> ${data.isp} (${data.country_code})</p>
+    <hr />
+    <div class="config-toggle">
+       <button class="button" onclick="fetchAndDisplayAlert('${path}')">Proxy Status</button>
+        <button class="button" onclick="toggleConfig(this, 'show clash', 'hide clash')">Show Clash</button>
+        <div class="config-content">
+            <div class="config-block">
+                <h3>TLS:</h3>
+                <p class="config">${clashConfTls}</p>
+                <button class="button" onclick='copyClash("clashTls${path}")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+            <hr />
+            <div class="config-block">
+                <h3>NTLS:</h3>
+                <p class="config">${clashConfNtls}</p>
+                <button class="button" onclick='copyClash("clashNtls${path}")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="config-divider" />
+`;
+            vlessConfigs += 
+`<div class="config-section">
+    <p><strong>ISP:</strong> ${data.isp} (${data.country_code})</p>
+    <hr />
+    <div class="config-toggle">
+        <button class="button" onclick="fetchAndDisplayAlert('${path}')">Proxy Status</button>
+        <button class="button" onclick="toggleConfig(this, 'show vless', 'hide vless')">Show Vless</button>
+        <div class="config-content">
+            <div class="config-block">
+                <h3>TLS:</h3>
+                <p class="config">${vlessTlsFixed}</p>
+                <button class="button" onclick='copyToClipboard("${vlessTlsFixed}")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+            <hr />
+            <div class="config-block">
+                <h3>NTLS:</h3>
+                <p class="config">${vlessNtlsFixed}</p>
+                <button class="button" onclick='copyToClipboard("${vlessNtlsFixed}")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="config-divider" />
+`;
+}
+              const vlessTlsRotate = `vless://${generateUUIDv4()}\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Frotate#ROTATE+PROXY`;
+              const vlessNtlsRotate = `vless://${generateUUIDv4()}\u0040${hostName}:80?path=%2Frotate&security=none&encryption=none&host=${hostName}&fp=randomized&type=ws&sni=${hostName}#ROTATE+PROXY`;
+              const clashConfTlsRotate = 
+`- name: ROTATE PROXY
+  server: ${hostName}
+  port: 443
+  type: vless
+  uuid: ${generateUUIDv4()}
+  cipher: auto
+  tls: true
+  udp: true
+  skip-cert-verify: true
+  network: ws
+  servername: ${hostName}
+  ws-opts:
+    path: /rotate
+    headers:
+      Host: ${hostName}`;
+             const clashConfNtlsRotate =
+`- name: ROTATE PROXY
+  server: ${hostName}
+  port: 80
+  type: vless
+  uuid: ${generateUUIDv4()}
+  cipher: auto
+  tls: false
+  udp: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /rotate
+    headers:
+      Host: ${hostName}`;
+              let clashConfigsRotate =
+`<div style="display: none;">
+   <textarea id="clashTls/rotate">${clashConfTlsRotate}</textarea>
+ </div>
+<div style="display: none;">
+   <textarea id="clashNtls/rotate">${clashConfNtlsRotate}</textarea>
+ </div>
+<div class="config-section">
+    <p><strong>ISP:</strong> ROTATE PROXY (5min) </p>
+    <hr />
+    <div class="config-toggle">
+        <button class="button" onclick="toggleConfig(this, 'show clash', 'hide clash')">Show Clash</button>
+        <div class="config-content">
+            <div class="config-block">
+                <h3>TLS:</h3>
+                <p class="config">${clashConfTlsRotate}</p>
+                <button class="button" onclick='copyClash("clashTls/rotate")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+            <hr />
+            <div class="config-block">
+                <h3>NTLS:</h3>
+                <p class="config">${clashConfNtlsRotate}</p>
+                <button class="button" onclick='copyClash("clashNtls/rotate")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="config-divider" />
+`;
+           let vlessConfigsRotate = 
+`<div class="config-section">
+    <p><strong>ISP:</strong> ROTATE PROXY (5min) </p>
+    <hr />
+    <div class="config-toggle">
+        <button class="button" onclick="toggleConfig(this, 'show vless', 'hide vless')">Show Vless</button>
+        <div class="config-content">
+            <div class="config-block">
+                <h3>TLS:</h3>
+                <p class="config">${vlessTlsRotate}</p>
+                <button class="button" onclick='copyToClipboard("${vlessTlsRotate}")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+            <hr />
+            <div class="config-block">
+                <h3>NTLS:</h3>
+                <p class="config">${vlessNtlsRotate}</p>
+                <button class="button" onclick='copyToClipboard("${vlessNtlsRotate}")'><i class="fa fa-clipboard"></i>Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="config-divider" />
+`;
+        let bugList = listBugs.map((bug, index) => `<li><span class="domain-number">${index + 1}</span> ${bug} <button class="button" onclick='copyToClipboard("${bug}")'><i class="fa fa-clipboard"></i>Copy</button></li>`).join('');
+
+        const htmlConfigs = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLESS | BEXNXX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6PCWJ+8zzHcXQjXGp6n5Yh9rX0x5fOdPaOqO+e2X4R5C1aE/BSqPIG+8y3O6APa8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://telegra.ph/file/0b9a4c97f231c8bc33aa9.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 80%;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            animation: fadeIn 1s ease-in-out;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 15, 15, 0.4);
+            z-index: -1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: #00a8ff;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .nav-buttons .button {
+            background-color: transparent;
+            border: 2px solid #00a8ff;
+            color: #00a8ff;
+            padding: 6px 12px;
+            font-size: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-buttons .button:hover {
+            background-color: #00a8ff;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .config-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .config-section h3 {
+            margin-top: 0;
+            color: #e1b12c;
+            font-size: 28px;
+        }
+
+        .config-section p {
+            color: #f5f5f5;
+            font-size: 16px;
+        }
+
+        .config-toggle {
+            margin-bottom: 20px;
+        }
+
+        .config-content {
+            display: none;
+        }
+
+        .config-content.active {
+            display: block;
+        }
+
+        .config-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .config-block h4 {
+            margin-bottom: 8px;
+            color: #f39c12;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .config {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px solid #00a8ff;
+            color: #f5f5f5;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+        .button {
+            background-color: transparent;
+            border: 2px solid #00a8ff;
+            color: #00a8ff;
+            padding: 4px 8px;
+            font-size: 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-right: 4px;
+        }
+
+        .button i {
+            margin-right: 3px;
+        }
+
+        .button:hover {
+            background-color: #00a8ff;
+            color: #fff;
+            transform: scale(1.0);
+        }
+
+        .config-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #fff, transparent);
+            margin: 40px 0;
+        }
+        .watermark {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            text-align: center;
+        }
+        .watermark a {
+            color: #ffa500;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .watermark a:hover {
+            color: #ffa500;
+        }
+        .domain-list {
+            color: #f5f5f5;
+            font-size: 10px;
+            list-style: none;
+            padding-left: 0;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .domain-list li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .domain-list li:hover {
+            transform: translateX(8px);
+        }
+
+        .domain-list li::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 650;
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #00a8ff;
+        }
+
+        .domain-number {
+            font-weight: bold;
+            color: #00a8ff;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .config-section h3 {
+                font-size: 24px;
+            }
+
+            .config-block h4 {
+                font-size: 20px;
+            }
+
+            .domain-list {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="header">
+            <h1>VLESS CLOUDFLARE</h1>
+        </div>
+        <div class="nav-buttons">
+            <button class="button" onclick="showContent('vless')">List vless</button>
+            <button class="button" onclick="showContent('clash')">List Clash</button>
+            <button class="button" onclick="showContent('domains')">List wildcard</button>
+        </div>
+        <div id="vless" class="content active">
+            ${vlessConfigs}
+            ${vlessConfigsRotate}
+        </div>
+        <div id="clash" class="content">
+            ${clashConfigs}
+            ${clashConfigsRotate}
+        </div>
+        <div id="domains" class="content">
+            <ul class="domain-list">
+                ${bugList}
+            </ul>
+        </div>
+    </div>
+    <div class="watermark">© <a href="https://t.me/bexnxx" target="_blank">BEXNXX</a></div>
+
+    <script>
+        function showContent(contentId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(contentId).classList.add('active');
+        }
+        function salinTeks() {
+            var teks = document.getElementById('teksAsli');
+            teks.select();
+            document.execCommand('copy');
+            alert('Teks telah disalin.');
+        }
+        function copyClash(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text)
+            .then(() => {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = "Copied to clipboard!";
+            alertBox.style.position = 'fixed';
+            alertBox.style.bottom = '20px';
+            alertBox.style.right = '20px';
+            alertBox.style.backgroundColor = '#00a8ff';
+            alertBox.style.color = '#fff';
+            alertBox.style.padding = '10px 20px';
+            alertBox.style.borderRadius = '5px';
+            alertBox.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            alertBox.style.opacity = '0';
+            alertBox.style.transition = 'opacity 0.5s ease-in-out';
+            document.body.appendChild(alertBox);
+            setTimeout(() => {
+                alertBox.style.opacity = '1';
+            }, 100);
+            setTimeout(() => {
+                alertBox.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 500);
+            }, 2000);
+        })
+        .catch((err) => {
+            console.error("Failed to copy to clipboard:", err);
+        });
+        }
+function fetchAndDisplayAlert(path) {
+    fetch(path)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(\`HTTP error! Status: \${response.status}\`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const proxyStatus = data.proxyStatus || "Unknown status";
+            const alertBox = document.createElement('div');
+            alertBox.textContent = \`Proxy Status: \${proxyStatus}\`;
+            alertBox.style.position = 'fixed';
+            alertBox.style.bottom = '20px';
+            alertBox.style.right = '20px';
+            alertBox.style.backgroundColor = '#00a8ff';
+            alertBox.style.color = '#fff';
+            alertBox.style.padding = '10px 20px';
+            alertBox.style.borderRadius = '5px';
+            alertBox.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            alertBox.style.opacity = '0';
+            alertBox.style.transition = 'opacity 0.5s ease-in-out';
+            document.body.appendChild(alertBox);
+            
+            setTimeout(() => {
+                alertBox.style.opacity = '1';
+            }, 100);
+            
+            setTimeout(() => {
+                alertBox.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(alertBox);
+                }, 500);
+            }, 2000);
+        })
+        .catch((err) => {
+            alert("Failed to fetch data or invalid response.");
+        });
+}
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    const alertBox = document.createElement('div');
+                    alertBox.textContent = "Copied to clipboard!";
+                    alertBox.style.position = 'fixed';
+                    alertBox.style.bottom = '20px';
+                    alertBox.style.right = '20px';
+                    alertBox.style.backgroundColor = '#00a8ff';
+                    alertBox.style.color = '#fff';
+                    alertBox.style.padding = '10px 20px';
+                    alertBox.style.borderRadius = '5px';
+                    alertBox.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                    alertBox.style.opacity = '0';
+                    alertBox.style.transition = 'opacity 0.5s ease-in-out';
+                    document.body.appendChild(alertBox);
+                    setTimeout(() => {
+                        alertBox.style.opacity = '1';
+                    }, 100);
+                    setTimeout(() => {
+                        alertBox.style.opacity = '0';
+                        setTimeout(() => {
+                            document.body.removeChild(alertBox);
+                        }, 500);
+                    }, 2000);
+                })
+                .catch((err) => {
+                    console.error("Failed to copy to clipboard:", err);
+                });
+        }
+
+        function toggleConfig(button, show, hide) {
+            const configContent = button.nextElementSibling;
+            if (configContent.classList.contains('active')) {
+                configContent.classList.remove('active');
+                button.textContent = show;
+            } else {
+                configContent.classList.add('active');
+                button.textContent = hide;
+            }
+        }
+    </script>
+</body>
+</html>`;
+        return htmlConfigs;
+    } catch (error) {
+        return `An error occurred while generating the VLESS configurations. ${error}`;
+    }
+}
+function generateUUIDv4() {
+  const randomValues = crypto.getRandomValues(new Uint8Array(16));
+  randomValues[6] = (randomValues[6] & 0x0f) | 0x40;
+  randomValues[8] = (randomValues[8] & 0x3f) | 0x80;
+  return [
+    randomValues[0].toString(16).padStart(2, '0'),
+    randomValues[1].toString(16).padStart(2, '0'),
+    randomValues[2].toString(16).padStart(2, '0'),
+    randomValues[3].toString(16).padStart(2, '0'),
+    randomValues[4].toString(16).padStart(2, '0'),
+    randomValues[5].toString(16).padStart(2, '0'),
+    randomValues[6].toString(16).padStart(2, '0'),
+    randomValues[7].toString(16).padStart(2, '0'),
+    randomValues[8].toString(16).padStart(2, '0'),
+    randomValues[9].toString(16).padStart(2, '0'),
+    randomValues[10].toString(16).padStart(2, '0'),
+    randomValues[11].toString(16).padStart(2, '0'),
+    randomValues[12].toString(16).padStart(2, '0'),
+    randomValues[13].toString(16).padStart(2, '0'),
+    randomValues[14].toString(16).padStart(2, '0'),
+    randomValues[15].toString(16).padStart(2, '0'),
+  ].join('').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
+}
+async function vlessOverWSHandler(request) {
+	const webSocketPair = new WebSocketPair();
+	const [client, webSocket] = Object.values(webSocketPair);
+
+	webSocket.accept();
+
+	let address = '';
+	let portWithRandomLog = '';
+	const log = (info, event) => {
+		console.log(`[${address}:${portWithRandomLog}] ${info}`, event || '');
+	};
+	const earlyDataHeader = request.headers.get('sec-websocket-protocol') || '';
+
+	const readableWebSocketStream = makeReadableWebSocketStream(webSocket, earlyDataHeader, log);
+
+	let remoteSocketWapper = {
+		value: null,
+	};
+	let udpStreamWrite = null;
+	let isDns = false;
+
+	readableWebSocketStream.pipeTo(new WritableStream({
+		async write(chunk, controller) {
+			if (isDns && udpStreamWrite) {
+				return udpStreamWrite(chunk);
+			}
+			if (remoteSocketWapper.value) {
+				const writer = remoteSocketWapper.value.writable.getWriter()
+				await writer.write(chunk);
+				writer.releaseLock();
+				return;
+			}
+
+			const {
+				hasError,
+				message,
+				portRemote = 443,
+				addressRemote = '',
+				rawDataIndex,
+				vlessVersion = new Uint8Array([0, 0]),
+				isUDP,
+			} = processVlessHeader(chunk);
+			address = addressRemote;
+			portWithRandomLog = `${portRemote}--${Math.random()} ${isUDP ? 'udp ' : 'tcp '
+				} `;
+			if (hasError) {
+				throw new Error(message); 
+				return;
+			}
+			if (isUDP) {
+				if (portRemote === 53) {
+					isDns = true;
+				} else {
+					throw new Error('UDP proxy only enable for DNS which is port 53');
+					return;
+				}
+			}
+			const vlessResponseHeader = new Uint8Array([vlessVersion[0], 0]);
+			const rawClientData = chunk.slice(rawDataIndex);
+
+			if (isDns) {
+				const { write } = await handleUDPOutBound(webSocket, vlessResponseHeader, log);
+				udpStreamWrite = write;
+				udpStreamWrite(rawClientData);
+				return;
+			}
+			handleTCPOutBound(remoteSocketWapper, addressRemote, portRemote, rawClientData, webSocket, vlessResponseHeader, log);
+		},
+		close() {
+			log(`readableWebSocketStream is close`);
+		},
+		abort(reason) {
+			log(`readableWebSocketStream is abort`, JSON.stringify(reason));
+		},
+	})).catch((err) => {
+		log('readableWebSocketStream pipeTo error', err);
+	});
+
+	return new Response(null, {
+		status: 101,
+		webSocket: client,
+	});
+}
+
+async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawClientData, webSocket, vlessResponseHeader, log,) {
+	async function connectAndWrite(address, port) {
+		const tcpSocket = connect({
+			hostname: address,
+			port: port,
+		});
+		remoteSocket.value = tcpSocket;
+		log(`connected to ${address}:${port}`);
+		const writer = tcpSocket.writable.getWriter();
+		await writer.write(rawClientData);
+		writer.releaseLock();
+		return tcpSocket;
+	}
+
+	async function retry() {
+		const tcpSocket = await connectAndWrite(proxyIP || addressRemote, portRemote)
+		tcpSocket.closed.catch(error => {
+			console.log('retry tcpSocket closed error', error);
+		}).finally(() => {
+			safeCloseWebSocket(webSocket);
+		})
+		remoteSocketToWS(tcpSocket, webSocket, vlessResponseHeader, null, log);
+	}
+
+	const tcpSocket = await connectAndWrite(addressRemote, portRemote);
+
+	remoteSocketToWS(tcpSocket, webSocket, vlessResponseHeader, retry, log);
+}
+
+function makeReadableWebSocketStream(webSocketServer, earlyDataHeader, log) {
+	let readableStreamCancel = false;
+	const stream = new ReadableStream({
+		start(controller) {
+			webSocketServer.addEventListener('message', (event) => {
+				if (readableStreamCancel) {
+					return;
+				}
+				const message = event.data;
+				controller.enqueue(message);
+			});
+			webSocketServer.addEventListener('close', () => {
+				safeCloseWebSocket(webSocketServer);
+				if (readableStreamCancel) {
+					return;
+				}
+				controller.close();
+			}
+			);
+			webSocketServer.addEventListener('error', (err) => {
+				log('webSocketServer has error');
+				controller.error(err);
+			}
+			);
+			const { earlyData, error } = base64ToArrayBuffer(earlyDataHeader);
+			if (error) {
+				controller.error(error);
+			} else if (earlyData) {
+				controller.enqueue(earlyData);
+			}
+		},
+
+		pull(controller) {
+		},
+		cancel(reason) {
+			if (readableStreamCancel) {
+				return;
+			}
+			log(`ReadableStream was canceled, due to ${reason}`)
+			readableStreamCancel = true;
+			safeCloseWebSocket(webSocketServer);
+		}
+	});
+
+	return stream;
+
+}
+function processVlessHeader(
+	vlessBuffer
+) {
+	if (vlessBuffer.byteLength < 24) {
+		return {
+			hasError: true,
+			message: 'invalid data',
+		};
+	}
+	const version = new Uint8Array(vlessBuffer.slice(0, 1));
+	let isValidUser = true;
+	let isUDP = false;
+	if (!isValidUser) {
+		return {
+			hasError: true,
+			message: 'invalid user',
+		};
+	}
+
+	const optLength = new Uint8Array(vlessBuffer.slice(17, 18))[0];
+
+	const command = new Uint8Array(
+		vlessBuffer.slice(18 + optLength, 18 + optLength + 1)
+	)[0];
+	if (command === 1) {
+	} else if (command === 2) {
+		isUDP = true;
+	} else {
+		return {
+			hasError: true,
+			message: `command ${command} is not support, command 01-tcp,02-udp,03-mux`,
+		};
+	}
+	const portIndex = 18 + optLength + 1;
+	const portBuffer = vlessBuffer.slice(portIndex, portIndex + 2);
+	const portRemote = new DataView(portBuffer).getUint16(0);
+
+	let addressIndex = portIndex + 2;
+	const addressBuffer = new Uint8Array(
+		vlessBuffer.slice(addressIndex, addressIndex + 1)
+	);
+
+	const addressType = addressBuffer[0];
+	let addressLength = 0;
+	let addressValueIndex = addressIndex + 1;
+	let addressValue = '';
+	switch (addressType) {
+		case 1:
+			addressLength = 4;
+			addressValue = new Uint8Array(
+				vlessBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			).join('.');
+			break;
+		case 2:
+			addressLength = new Uint8Array(
+				vlessBuffer.slice(addressValueIndex, addressValueIndex + 1)
+			)[0];
+			addressValueIndex += 1;
+			addressValue = new TextDecoder().decode(
+				vlessBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			);
+			break;
+		case 3:
+			addressLength = 16;
+			const dataView = new DataView(
+				vlessBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			);
+			const ipv6 = [];
+			for (let i = 0; i < 8; i++) {
+				ipv6.push(dataView.getUint16(i * 2).toString(16));
+			}
+			addressValue = ipv6.join(':');
+			break;
+		default:
+			return {
+				hasError: true,
+				message: `invild  addressType is ${addressType}`,
+			};
+	}
+	if (!addressValue) {
+		return {
+			hasError: true,
+			message: `addressValue is empty, addressType is ${addressType}`,
+		};
+	}
+
+	return {
+		hasError: false,
+		addressRemote: addressValue,
+		addressType,
+		portRemote,
+		rawDataIndex: addressValueIndex + addressLength,
+		vlessVersion: version,
+		isUDP,
+	};
+}
+
+async function remoteSocketToWS(remoteSocket, webSocket, vlessResponseHeader, retry, log) {
+	let remoteChunkCount = 0;
+	let chunks = [];
+	let vlessHeader = vlessResponseHeader;
+	let hasIncomingData = false;
+	await remoteSocket.readable
+		.pipeTo(
+			new WritableStream({
+				start() {
+				},
+				async write(chunk, controller) {
+					hasIncomingData = true;
+					if (webSocket.readyState !== WS_READY_STATE_OPEN) {
+						controller.error(
+							'webSocket.readyState is not open, maybe close'
+						);
+					}
+					if (vlessHeader) {
+						webSocket.send(await new Blob([vlessHeader, chunk]).arrayBuffer());
+						vlessHeader = null;
+					} else {
+						webSocket.send(chunk);
+					}
+				},
+				close() {
+					log(`remoteConnection!.readable is close with hasIncomingData is ${hasIncomingData}`);
+				},
+				abort(reason) {
+					console.error(`remoteConnection!.readable abort`, reason);
+				},
+			})
+		)
+		.catch((error) => {
+			console.error(
+				`remoteSocketToWS has exception `,
+				error.stack || error
+			);
+			safeCloseWebSocket(webSocket);
+		});
+	if (hasIncomingData === false && retry) {
+		log(`retry`)
+		retry();
+	}
+}
+
+function base64ToArrayBuffer(base64Str) {
+	if (!base64Str) {
+		return { error: null };
+	}
+	try {
+		base64Str = base64Str.replace(/-/g, '+').replace(/_/g, '/');
+		const decode = atob(base64Str);
+		const arryBuffer = Uint8Array.from(decode, (c) => c.charCodeAt(0));
+		return { earlyData: arryBuffer.buffer, error: null };
+	} catch (error) {
+		return { error };
+	}
+}
+
+
+const WS_READY_STATE_OPEN = 1;
+const WS_READY_STATE_CLOSING = 2;
+function safeCloseWebSocket(socket) {
+	try {
+		if (socket.readyState === WS_READY_STATE_OPEN || socket.readyState === WS_READY_STATE_CLOSING) {
+			socket.close();
+		}
+	} catch (error) {
+		console.error('safeCloseWebSocket error', error);
+	}
+}
+
+async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
+
+	let isVlessHeaderSent = false;
+	const transformStream = new TransformStream({
+		start(controller) {
+
+		},
+		transform(chunk, controller) {
+			for (let index = 0; index < chunk.byteLength;) {
+				const lengthBuffer = chunk.slice(index, index + 2);
+				const udpPakcetLength = new DataView(lengthBuffer).getUint16(0);
+				const udpData = new Uint8Array(
+					chunk.slice(index + 2, index + 2 + udpPakcetLength)
+				);
+				index = index + 2 + udpPakcetLength;
+				controller.enqueue(udpData);
+			}
+		},
+		flush(controller) {
+		}
+	});
+	transformStream.readable.pipeTo(new WritableStream({
+		async write(chunk) {
+			const resp = await fetch('https://1.1.1.1/dns-query',
+				{
+					method: 'POST',
+					headers: {
+						'content-type': 'application/dns-message',
+					},
+					body: chunk,
+				})
+			const dnsQueryResult = await resp.arrayBuffer();
+			const udpSize = dnsQueryResult.byteLength;
+			const udpSizeBuffer = new Uint8Array([(udpSize >> 8) & 0xff, udpSize & 0xff]);
+			if (webSocket.readyState === WS_READY_STATE_OPEN) {
+				log(`doh success and dns message length is ${udpSize}`);
+				if (isVlessHeaderSent) {
+					webSocket.send(await new Blob([udpSizeBuffer, dnsQueryResult]).arrayBuffer());
+				} else {
+					webSocket.send(await new Blob([vlessResponseHeader, udpSizeBuffer, dnsQueryResult]).arrayBuffer());
+					isVlessHeaderSent = true;
+				}
+			}
+		}
+	})).catch((error) => {
+		log('dns udp has error' + error)
+	});
+
+	const writer = transformStream.writable.getWriter();
+
+	return {
+		write(chunk) {
+			writer.write(chunk);
+		}
+	};
+}
