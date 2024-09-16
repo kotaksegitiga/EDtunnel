@@ -1,1 +1,944 @@
-function a0_0x57ef(_0x47566b,_0xd06030){const _0x701567=a0_0x7015();return a0_0x57ef=function(_0x57ef54,_0x9543d1){_0x57ef54=_0x57ef54-0xe4;let _0x526d62=_0x701567[_0x57ef54];return _0x526d62;},a0_0x57ef(_0x47566b,_0xd06030);}const a0_0x164431=a0_0x57ef;(function(_0x3628bd,_0x3ac57b){const _0x3bbcf=a0_0x57ef,_0x97d420=_0x3628bd();while(!![]){try{const _0x29ec73=parseInt(_0x3bbcf(0x118))/0x1*(parseInt(_0x3bbcf(0x1c6))/0x2)+parseInt(_0x3bbcf(0x18a))/0x3+parseInt(_0x3bbcf(0x163))/0x4*(parseInt(_0x3bbcf(0x12b))/0x5)+-parseInt(_0x3bbcf(0x14c))/0x6+-parseInt(_0x3bbcf(0x1d2))/0x7*(parseInt(_0x3bbcf(0x100))/0x8)+parseInt(_0x3bbcf(0x125))/0x9+parseInt(_0x3bbcf(0x1d6))/0xa*(-parseInt(_0x3bbcf(0x120))/0xb);if(_0x29ec73===_0x3ac57b)break;else _0x97d420['push'](_0x97d420['shift']());}catch(_0x4bae08){_0x97d420['push'](_0x97d420['shift']());}}}(a0_0x7015,0x7fb23));import{connect}from'cloudflare:sockets';let userID=a0_0x164431(0x1ad);const proxyIPs=['cdn.xn--b6gac.eu.org',a0_0x164431(0xed),a0_0x164431(0x104)];let proxyIP=proxyIPs[Math[a0_0x164431(0x1d8)](Math[a0_0x164431(0x1b0)]()*proxyIPs[a0_0x164431(0x153)])],socks5Address='',socks5Relay=![];if(!isValidUUID(userID))throw new Error(a0_0x164431(0x157));let parsedSocks5Address={},enableSocks=![];export default{async 'fetch'(_0x1a7911,_0x3932ae,_0x4023c2){const _0x2542c8=a0_0x164431;try{const {UUID:_0x47dc7e,PROXYIP:_0x5639a1,SOCKS5:_0x4b5652,SOCKS5_RELAY:_0x68c188}=_0x3932ae;userID=_0x47dc7e||userID,proxyIP=_0x5639a1||proxyIP,socks5Address=_0x4b5652||socks5Address,socks5Relay=_0x68c188||socks5Relay;if(socks5Address)try{parsedSocks5Address=socks5AddressParser(socks5Address),enableSocks=!![];}catch(_0x6771bb){console['log'](_0x6771bb['toString']()),enableSocks=![];}const _0x1ebb4=userID[_0x2542c8(0x188)](',')?userID[_0x2542c8(0x147)](',')[0x0]:userID,_0x92e323=new URL(_0x1a7911[_0x2542c8(0x113)]),_0x3309d0=_0x1a7911[_0x2542c8(0x181)]['get'](_0x2542c8(0x148));if(_0x1a7911[_0x2542c8(0x181)][_0x2542c8(0x108)](_0x2542c8(0x179))!==_0x2542c8(0x112))switch(_0x92e323[_0x2542c8(0x1cb)]){case _0x2542c8(0xf8):return new Response(JSON['stringify'](_0x1a7911['cf'],null,0x4),{'status':0xc8,'headers':{'Content-Type':_0x2542c8(0x13d)}});case'/'+_0x1ebb4:return new Response(getConfig(userID,_0x3309d0),{'status':0xc8,'headers':{'Content-Type':_0x2542c8(0x194)}});case _0x2542c8(0x11d)+_0x1ebb4:return new Response(btoa(GenSub(userID,_0x3309d0)),{'status':0xc8,'headers':{'Content-Type':_0x2542c8(0x1c3)}});case _0x2542c8(0x12a)+_0x1ebb4:return fetch(_0x2542c8(0x16a)+_0x3309d0+_0x2542c8(0x169)+userID+_0x2542c8(0x10e),{'headers':_0x1a7911[_0x2542c8(0x181)]});default:return handleDefaultPath(_0x92e323,_0x1a7911);}else return await ProtocolOverWSHandler(_0x1a7911);}catch(_0x5ebdae){return new Response(_0x5ebdae[_0x2542c8(0x1cf)]());}}};async function handleDefaultPath(_0x460983,_0x4fec48){const _0x117497=a0_0x164431,_0x298450=hostnames[Math['floor'](Math[_0x117497(0x1b0)]()*hostnames[_0x117497(0x153)])],_0x43abeb=new Headers(_0x4fec48[_0x117497(0x181)]);_0x43abeb[_0x117497(0x196)]('cf-connecting-ip',_0x117497(0x1c7)),_0x43abeb['set'](_0x117497(0x110),_0x117497(0x1c7)),_0x43abeb[_0x117497(0x196)]('x-real-ip',_0x117497(0x1c7)),_0x43abeb[_0x117497(0x196)](_0x117497(0x155),'https://www.google.com/search?q=edtunnel');const _0x21d83f=_0x117497(0x18f)+_0x298450+_0x460983[_0x117497(0x1cb)]+_0x460983['search'],_0x2167bd=new Request(_0x21d83f,{'method':_0x4fec48[_0x117497(0x1ab)],'headers':_0x43abeb,'body':_0x4fec48['body'],'redirect':_0x117497(0x122)}),_0x25967a=await fetch(_0x2167bd,{'redirect':_0x117497(0x122)});if([0x12d,0x12e]['includes'](_0x25967a[_0x117497(0x132)]))return new Response(_0x117497(0x171)+_0x298450+_0x117497(0x1c1),{'status':0x193,'statusText':_0x117497(0x158)});return _0x25967a;}async function ProtocolOverWSHandler(_0x29f858){const _0x422f63=a0_0x164431,_0x13da1=new WebSocketPair(),[_0x47f984,_0x1f509f]=Object[_0x422f63(0x116)](_0x13da1);_0x1f509f[_0x422f63(0x191)]();let _0x3534cd='',_0x538ba7='';const _0x2789e6=(_0x1d8ac8,_0x394d66)=>{const _0x45eefd=_0x422f63;console[_0x45eefd(0x16c)]('['+_0x3534cd+':'+_0x538ba7+']\x20'+_0x1d8ac8,_0x394d66||'');},_0x2d41ca=_0x29f858[_0x422f63(0x181)][_0x422f63(0x108)](_0x422f63(0xe7))||'',_0x715877=makeReadableWebSocketStream(_0x1f509f,_0x2d41ca,_0x2789e6);let _0x9f395e={'value':null},_0x223987=![];return _0x715877[_0x422f63(0x1a5)](new WritableStream({async 'write'(_0x5c5295,_0x1204e3){const _0x12e955=_0x422f63;if(_0x223987)return await handleDNSQuery(_0x5c5295,_0x1f509f,null,_0x2789e6);if(_0x9f395e[_0x12e955(0x1d1)]){const _0x226440=_0x9f395e[_0x12e955(0x1d1)][_0x12e955(0x109)][_0x12e955(0x18d)]();await _0x226440[_0x12e955(0x144)](_0x5c5295),_0x226440['releaseLock']();return;}const {hasError:_0x59bdfd,message:_0x4f1a06,addressType:_0x44dc5c,portRemote:portRemote=0x1bb,addressRemote:addressRemote='',rawDataIndex:_0x550dd3,ProtocolVersion:ProtocolVersion=new Uint8Array([0x0,0x0]),isUDP:_0x4bd74a}=processProtocolHeader(_0x5c5295,userID);_0x3534cd=addressRemote,_0x538ba7=portRemote+'--'+Math[_0x12e955(0x1b0)]()+'\x20'+(_0x4bd74a?_0x12e955(0xe5):'tcp\x20')+'\x20';if(_0x59bdfd){throw new Error(_0x4f1a06);return;}if(_0x4bd74a){if(portRemote===0x35)_0x223987=!![];else{throw new Error(_0x12e955(0xf2));return;}}const _0x1f6686=new Uint8Array([ProtocolVersion[0x0],0x0]),_0x1a3b9b=_0x5c5295['slice'](_0x550dd3);if(_0x223987)return handleDNSQuery(_0x1a3b9b,_0x1f509f,_0x1f6686,_0x2789e6);handleTCPOutBound(_0x9f395e,_0x44dc5c,addressRemote,portRemote,_0x1a3b9b,_0x1f509f,_0x1f6686,_0x2789e6);},'close'(){const _0x303a25=_0x422f63;_0x2789e6(_0x303a25(0x1a9));},'abort'(_0x53adb8){const _0x48eaff=_0x422f63;_0x2789e6(_0x48eaff(0x151),JSON[_0x48eaff(0x11a)](_0x53adb8));}}))[_0x422f63(0x1d4)](_0x302394=>{const _0x11bcd9=_0x422f63;_0x2789e6(_0x11bcd9(0xfc),_0x302394);}),new Response(null,{'status':0x65,'webSocket':_0x47f984});}async function trojanOverWSHandler(_0x275200){const _0x2029db=a0_0x164431,_0x5bf74f=new WebSocketPair(),[_0x2cd614,_0x449bfa]=Object['values'](_0x5bf74f);_0x449bfa[_0x2029db(0x191)]();let _0xa6093d='',_0x32badb='';const _0x1f42bf=(_0x2a6c4e,_0x1f21eb)=>{const _0x3f93b9=_0x2029db;console[_0x3f93b9(0x16c)]('['+_0xa6093d+':'+_0x32badb+']\x20'+_0x2a6c4e,_0x1f21eb||'');},_0x468777=_0x275200[_0x2029db(0x181)][_0x2029db(0x108)]('sec-websocket-protocol')||'',_0x545ffe=makeReadableWebSocketStream(_0x449bfa,_0x468777,_0x1f42bf);let _0x1ba08d={'value':null},_0x1d6e17=null;return _0x545ffe['pipeTo'](new WritableStream({async 'write'(_0x475236,_0x39c44c){const _0x1ba1c2=_0x2029db;if(_0x1d6e17)return _0x1d6e17(_0x475236);if(_0x1ba08d['value']){const _0x55c003=_0x1ba08d[_0x1ba1c2(0x1d1)][_0x1ba1c2(0x109)]['getWriter']();await _0x55c003[_0x1ba1c2(0x144)](_0x475236),_0x55c003['releaseLock']();return;}const {hasError:_0x59a7dc,message:_0x253667,portRemote:portRemote=0x1bb,addressRemote:addressRemote='',rawClientData:_0x43e24c,addressType:_0x5a2782}=await parseTrojanHeader(_0x475236);_0xa6093d=addressRemote,_0x32badb=portRemote+'--'+Math[_0x1ba1c2(0x1b0)]()+_0x1ba1c2(0x180);if(_0x59a7dc){throw new Error(_0x253667);return;}handleTCPOutBound(_0x1ba08d,addressRemote,portRemote,_0x43e24c,_0x449bfa,_0x1f42bf,_0x5a2782);},'close'(){const _0x5ddd2c=_0x2029db;_0x1f42bf(_0x5ddd2c(0x1aa));},'abort'(_0xa8999a){const _0x539f69=_0x2029db;_0x1f42bf(_0x539f69(0x1a4),JSON[_0x539f69(0x11a)](_0xa8999a));}}))[_0x2029db(0x1d4)](_0x534e30=>{const _0x32a6a8=_0x2029db;_0x1f42bf(_0x32a6a8(0xfc),_0x534e30);}),new Response(null,{'status':0x65,'webSocket':_0x2cd614});}async function handleTCPOutBound(_0x47c9d3,_0x4beef2,_0x5e75e9,_0x3cc4ae,_0x4fd671,_0xb4ee47,_0x38a397,_0xe0db69){async function _0xcfcde4(_0x5b5648,_0x7493ee,_0x27b95b=![]){const _0x424108=a0_0x57ef;let _0x557c39;socks5Relay?_0x557c39=await socks5Connect(_0x4beef2,_0x5b5648,_0x7493ee,_0xe0db69):_0x557c39=_0x27b95b?await socks5Connect(_0x4beef2,_0x5b5648,_0x7493ee,_0xe0db69):connect({'hostname':_0x5b5648,'port':_0x7493ee});_0x47c9d3[_0x424108(0x1d1)]=_0x557c39,_0xe0db69(_0x424108(0x1b9)+_0x5b5648+':'+_0x7493ee);const _0x2b89aa=_0x557c39['writable'][_0x424108(0x18d)]();return await _0x2b89aa['write'](_0x4fd671),_0x2b89aa[_0x424108(0x18c)](),_0x557c39;}async function _0x4f81f5(){const _0x272b81=a0_0x57ef;enableSocks?_0x4e5b2e=await _0xcfcde4(_0x5e75e9,_0x3cc4ae,!![]):_0x4e5b2e=await _0xcfcde4(proxyIP||_0x5e75e9,_0x3cc4ae),_0x4e5b2e['closed'][_0x272b81(0x1d4)](_0x49ccdb=>{const _0x23d1ce=_0x272b81;console[_0x23d1ce(0x16c)](_0x23d1ce(0x152),_0x49ccdb);})[_0x272b81(0x168)](()=>{safeCloseWebSocket(_0xb4ee47);}),remoteSocketToWS(_0x4e5b2e,_0xb4ee47,_0x38a397,null,_0xe0db69);}let _0x4e5b2e=await _0xcfcde4(_0x5e75e9,_0x3cc4ae);remoteSocketToWS(_0x4e5b2e,_0xb4ee47,_0x38a397,_0x4f81f5,_0xe0db69);}function makeReadableWebSocketStream(_0x4b655e,_0x1c010a,_0x1565da){let _0x2c6c74=![];const _0x299bf6=new ReadableStream({'start'(_0x572f21){const _0x1fa2fb=a0_0x57ef;_0x4b655e[_0x1fa2fb(0x1a8)](_0x1fa2fb(0x11e),_0x1a14bd=>{const _0x2a8727=_0x1a14bd['data'];_0x572f21['enqueue'](_0x2a8727);}),_0x4b655e[_0x1fa2fb(0x1a8)](_0x1fa2fb(0x190),()=>{const _0x30539d=_0x1fa2fb;safeCloseWebSocket(_0x4b655e),_0x572f21[_0x30539d(0x190)]();}),_0x4b655e[_0x1fa2fb(0x1a8)](_0x1fa2fb(0x1d3),_0x5f0435=>{const _0xb7c801=_0x1fa2fb;_0x1565da(_0xb7c801(0x197)),_0x572f21[_0xb7c801(0x1d3)](_0x5f0435);});const {earlyData:_0x55e012,error:_0x29e666}=base64ToArrayBuffer(_0x1c010a);if(_0x29e666)_0x572f21[_0x1fa2fb(0x1d3)](_0x29e666);else _0x55e012&&_0x572f21[_0x1fa2fb(0x137)](_0x55e012);},'pull'(_0x136071){},'cancel'(_0x56bbdd){const _0x19757c=a0_0x57ef;_0x1565da(_0x19757c(0x16d)+_0x56bbdd),_0x2c6c74=!![],safeCloseWebSocket(_0x4b655e);}});return _0x299bf6;}function processProtocolHeader(_0x2d5526,_0x4dea18){const _0x5a2b76=a0_0x164431;if(_0x2d5526[_0x5a2b76(0x12f)]<0x18)return{'hasError':!![],'message':_0x5a2b76(0x178)};const _0xdc8354=new DataView(_0x2d5526),_0xf1d0bb=_0xdc8354['getUint8'](0x0),_0x4a8cda=stringify(new Uint8Array(_0x2d5526[_0x5a2b76(0x1d0)](0x1,0x11))),_0x5c0a82=_0x4dea18[_0x5a2b76(0x188)](',')?_0x4dea18[_0x5a2b76(0x147)](','):[_0x4dea18],_0x402e7f=_0x5c0a82['some'](_0x30ec9f=>_0x4a8cda===_0x30ec9f['trim']())||_0x5c0a82[_0x5a2b76(0x153)]===0x1&&_0x4a8cda===_0x5c0a82[0x0][_0x5a2b76(0x146)]();console[_0x5a2b76(0x16c)]('userID:\x20'+_0x4a8cda);if(!_0x402e7f)return{'hasError':!![],'message':'invalid\x20user'};const _0x79bccb=_0xdc8354[_0x5a2b76(0x1b7)](0x11),_0x49f7ae=_0xdc8354[_0x5a2b76(0x1b7)](0x12+_0x79bccb);if(_0x49f7ae!==0x1&&_0x49f7ae!==0x2)return{'hasError':!![],'message':_0x5a2b76(0x136)+_0x49f7ae+_0x5a2b76(0x189)};const _0x283ce0=0x12+_0x79bccb+0x1,_0x27a6e6=_0xdc8354[_0x5a2b76(0x186)](_0x283ce0),_0x4b6da3=_0xdc8354[_0x5a2b76(0x1b7)](_0x283ce0+0x2);let _0x4cb971,_0xa8e048,_0x5f20c0;switch(_0x4b6da3){case 0x1:_0xa8e048=0x4,_0x5f20c0=_0x283ce0+0x3,_0x4cb971=new Uint8Array(_0x2d5526[_0x5a2b76(0x1d0)](_0x5f20c0,_0x5f20c0+_0xa8e048))[_0x5a2b76(0x16f)]('.');break;case 0x2:_0xa8e048=_0xdc8354['getUint8'](_0x283ce0+0x3),_0x5f20c0=_0x283ce0+0x4,_0x4cb971=new TextDecoder()['decode'](_0x2d5526[_0x5a2b76(0x1d0)](_0x5f20c0,_0x5f20c0+_0xa8e048));break;case 0x3:_0xa8e048=0x10,_0x5f20c0=_0x283ce0+0x3,_0x4cb971=Array[_0x5a2b76(0x124)]({'length':0x8},(_0x23c5e8,_0x5039e2)=>_0xdc8354['getUint16'](_0x5f20c0+_0x5039e2*0x2)[_0x5a2b76(0x1cf)](0x10))['join'](':');break;default:return{'hasError':!![],'message':'invalid\x20addressType:\x20'+_0x4b6da3};}if(!_0x4cb971)return{'hasError':!![],'message':_0x5a2b76(0xf4)+_0x4b6da3};return{'hasError':![],'addressRemote':_0x4cb971,'addressType':_0x4b6da3,'portRemote':_0x27a6e6,'rawDataIndex':_0x5f20c0+_0xa8e048,'protocolVersion':new Uint8Array([_0xf1d0bb]),'isUDP':_0x49f7ae===0x2};}async function remoteSocketToWS(_0x5033fc,_0x38d9a6,_0x3175e5,_0x24382b,_0x24c95e){const _0x44d357=a0_0x164431;let _0x5d9365=![];try{await _0x5033fc[_0x44d357(0x123)][_0x44d357(0x1a5)](new WritableStream({async 'write'(_0x4a841){const _0x3a727e=_0x44d357;if(_0x38d9a6[_0x3a727e(0x17c)]!==WS_READY_STATE_OPEN)throw new Error(_0x3a727e(0x166));_0x5d9365=!![],_0x3175e5?(_0x38d9a6[_0x3a727e(0xf1)](await new Blob([_0x3175e5,_0x4a841])[_0x3a727e(0x1bb)]()),_0x3175e5=null):_0x38d9a6[_0x3a727e(0xf1)](_0x4a841);},'close'(){_0x24c95e('Remote\x20connection\x20readable\x20closed.\x20Had\x20incoming\x20data:\x20'+_0x5d9365);},'abort'(_0x11db0a){const _0x2c6819=_0x44d357;console[_0x2c6819(0x1d3)](_0x2c6819(0x19e),_0x11db0a);}}));}catch(_0x2fd91d){console['error']('remoteSocketToWS\x20error:',_0x2fd91d[_0x44d357(0x173)]||_0x2fd91d),safeCloseWebSocket(_0x38d9a6);}!_0x5d9365&&_0x24382b&&(_0x24c95e(_0x44d357(0x102)),await _0x24382b());}function base64ToArrayBuffer(_0x954644){const _0x276aa4=a0_0x164431;if(!_0x954644)return{'earlyData':null,'error':null};try{_0x954644=_0x954644[_0x276aa4(0x156)](/-/g,'+')[_0x276aa4(0x156)](/_/g,'/');const _0x48587e=atob(_0x954644),_0x43be2e=new ArrayBuffer(_0x48587e[_0x276aa4(0x153)]),_0x318c88=new Uint8Array(_0x43be2e);for(let _0xb5c165=0x0;_0xb5c165<_0x48587e[_0x276aa4(0x153)];_0xb5c165++){_0x318c88[_0xb5c165]=_0x48587e[_0x276aa4(0x182)](_0xb5c165);}return{'earlyData':_0x43be2e,'error':null};}catch(_0x1a6b7e){return{'earlyData':null,'error':_0x1a6b7e};}}function isValidUUID(_0x4844d1){const _0xbaf953=a0_0x164431,_0x4d2deb=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;return _0x4d2deb[_0xbaf953(0xf3)](_0x4844d1);}const WS_READY_STATE_OPEN=0x1,WS_READY_STATE_CLOSING=0x2;function safeCloseWebSocket(_0x5cba79){const _0x5ba42a=a0_0x164431;try{(_0x5cba79[_0x5ba42a(0x17c)]===WS_READY_STATE_OPEN||_0x5cba79[_0x5ba42a(0x17c)]===WS_READY_STATE_CLOSING)&&_0x5cba79[_0x5ba42a(0x190)]();}catch(_0x4add96){console[_0x5ba42a(0x1d3)](_0x5ba42a(0x138),_0x4add96);}}function a0_0x7015(){const _0x24e6c7=['sent\x20socks\x20greeting','&fp=randomized&type=ws&host=','www.quyaoya.com','readableWebSocketStream\x20is\x20abort','retry\x20tcpSocket\x20closed\x20error','length','Unknown\x20address\x20type:\x20','referer','replace','uuid\x20is\x20not\x20valid','Forbidden','www.pconline.com.cn','\x0a\x20\x20<body>\x0a\x20\x20\x20\x20','security','DomainName','www.dianping.com','pages.dev','www.eyny.com','byteOffset','-HTTP-','Invalid\x20SOCKS\x20address\x20format','58524hEOEHp','padStart','www.youth.cn','WebSocket\x20is\x20not\x20open','map','finally','&uuid=','https://sub.xf.free.hr/auto?host=','&path=%2F%3Fed%3D2048#','log','ReadableStream\x20was\x20canceled,\x20due\x20to\x20','Invalid\x20header\x20format\x20(missing\x20CR\x20LF)','join','www.csdn.net','Redirects\x20to\x20','toLowerCase','stack','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-link\x22></i>\x20VLESS\x20Subscription</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22clash://install-config?url=','www.liepin.com','Invalid\x20SOCKS5\x20request\x20data','serverName','invalid\x20data','Upgrade','Invalid\x20password','www.sina.com.cn','readyState','&path=','IPv4','POST','\x20tcp','headers','charCodeAt','?format=clash','\x0a\x20\x20</body>\x0a\x20\x20<script>\x0a\x20\x20\x20\x20function\x20copyToClipboard(text)\x20{\x0a\x20\x20\x20\x20\x20\x20navigator.clipboard.writeText(text)\x0a\x20\x20\x20\x20\x20\x20\x20\x20.then(()\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20alert(\x22Copied\x20to\x20clipboard\x22);\x0a\x20\x20\x20\x20\x20\x20\x20\x20})\x0a\x20\x20\x20\x20\x20\x20\x20\x20.catch((err)\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20console.error(\x22Failed\x20to\x20copy\x20to\x20clipboard:\x22,\x20err);\x0a\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x20\x20\x20\x20}\x0a\x20\x20</script>\x0a\x20\x20</html>','socks\x20server\x20version\x20error:\x20','getUint16','weibo.com','includes','\x20is\x20not\x20supported,\x20command\x2001-tcp,02-udp,03-mux','1189608NePXDz','www.panda.tv','releaseLock','getWriter','\x22)\x27><i\x20class=\x22fas\x20fa-copy\x22></i>\x20Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>Best\x20IP\x20Configuration</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<pre><code>','https://','close','accept','www.zhangzishi.cc','www.youku.com','text/html;\x20charset=utf-8','www.cntv.cn','set','webSocketServer\x20has\x20error','www.91.com','dns\x20server(','fail\x20to\x20open\x20socks\x20connection','\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22container\x20config-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h2>UUID:\x20','www.cnblogs.com','www.cnzz.com','Remote\x20connection\x20readable\x20aborted:','www.douban.com','www.51cto.com','decode','www.autohome.com.cn',',\x20has\x20to\x20be\x20ws\x20(Websocket)','readableWebSocketStream\x20is\x20aborted','pipeTo','&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true','dns\x20udp\x20has\x20error','addEventListener','readableWebSocketStream\x20is\x20close','readableWebSocketStream\x20is\x20closed','method','substring','d342d11e-d424-4583-b36e-524ab1f0afa4','www.taobao.com','www.toutiao.io','random','dmxlc3M=','?ed=2048','www.jianshu.com','sha224','www.tmall.com','</code></pre>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20copy-btn\x22\x20onclick=\x27copyToClipboard(\x22','getUint8','www.jd.com','connected\x20to\x20','The\x20SNI\x20is\x20different\x20from\x20the\x20server\x20address,\x20this\x20is\x20unsupported\x20due\x20to\x20Cloudflare\x20API\x20restrictions','arrayBuffer','/\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:image\x27\x20content=\x27https://ipfs.io/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:card\x27\x20content=\x27summary_large_image\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:title\x27\x20content=\x27EDtunnel\x20-\x20Protocol\x20Configuration\x20and\x20Subscribe\x20Output\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:description\x27\x20content=\x27Use\x20Cloudflare\x20Pages\x20and\x20Worker\x20serverless\x20to\x20implement\x20protocol\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:url\x27\x20content=\x27https://','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-bolt\x22></i>\x20Clash\x20Subscription</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','\x0a\x20\x20\x20\x20','Unsupported\x20outbound\x20stream\x20method:\x20','please\x20provide\x20username/password','\x20are\x20not\x20allowed.','forEach','text/plain;charset=utf-8','www.zhibo8.cc','www.qq.com','32140tUvguo','1.2.3.4','read','handleDNSQuery\x20have\x20exception,\x20error:\x20','www.ifeng.com','pathname',')\x20tcp\x20is\x20close','The\x20Host\x20field\x20in\x20the\x20http\x20header\x20is\x20different\x20from\x20the\x20server\x20address,\x20this\x20is\x20unsupported\x20due\x20to\x20Cloudflare\x20API\x20restrictions','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-star\x22></i>\x20Best\x20IP\x20Subscription</a>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22subscription-info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>Options\x20Explained:</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>VLESS\x20Subscription:</strong>\x20Direct\x20link\x20for\x20VLESS\x20protocol\x20configuration.\x20Suitable\x20for\x20clients\x20supporting\x20VLESS.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>Clash\x20Subscription:</strong>\x20Opens\x20the\x20Clash\x20client\x20with\x20pre-configured\x20settings.\x20Best\x20for\x20Clash\x20users\x20on\x20mobile\x20devices.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>Clash\x20Link:</strong>\x20A\x20web\x20link\x20to\x20convert\x20the\x20VLESS\x20config\x20to\x20Clash\x20format.\x20Useful\x20for\x20manual\x20import\x20or\x20troubleshooting.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><strong>Best\x20IP\x20Subscription:</strong>\x20Provides\x20a\x20curated\x20list\x20of\x20optimal\x20server\x20IPs\x20for\x20many\x20<b>different\x20countries</b>.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p>Choose\x20the\x20option\x20that\x20best\x20fits\x20your\x20client\x20and\x20needs.\x20For\x20most\x20users,\x20the\x20VLESS\x20or\x20Clash\x20Subscription\x20will\x20be\x20the\x20easiest\x20to\x20use.</p>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20','toString','slice','value','1211777phKEBg','error','catch','buffer','5695150ghMSpo','reverse','floor','www.xinhuanet.com','queryParams','www.renren.com','udp\x20','www.meituan.com','sec-websocket-protocol','www.zhihu.com','www.ted.com','https://url.v1.mk/sub?target=clash&url=','fail\x20to\x20auth\x20socks\x20server','www.secoo.com','cdn-all.xn--b6gac.eu.org','://','wsSettings','www.hao123.com','send','UDP\x20proxy\x20only\x20enable\x20for\x20DNS\x20which\x20is\x20port\x2053','test','addressValue\x20is\x20empty,\x20addressType\x20is\x20','www.qidian.com','www.dianyou.cn','sent\x20socks\x20request','/cf','www.mgtv.com','invild\x20\x20addressType\x20is\x20','tlsSettings','readableWebSocketStream\x20pipeTo\x20error','www.zhaopin.com','www.ximalaya.com','tls','8SNyISs','</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>Default\x20IP\x20Configuration</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<pre><code>','No\x20incoming\x20data,\x20retrying','www.881903.com','workers.cloudflare.cyou','www.ctrip.com',')\x20tcp\x20is\x20abort','www.kuaidi100.com','get','writable','socks\x20server\x20needs\x20auth','\x0a\x20\x20\x20\x20<div\x20class=\x22container\x22>\x0a\x20\x20\x20\x20\x20\x20<h1>EDtunnel:\x20Protocol\x20Configuration</h1>\x0a\x20\x20\x20\x20\x20\x20<img\x20src=\x22https://ipfs.io/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky\x22\x20alt=\x22EDtunnel\x20Logo\x22\x20class=\x22logo\x22>\x0a\x20\x20\x20\x20\x20\x20<p>Welcome!\x20This\x20function\x20generates\x20configuration\x20for\x20the\x20vless\x20protocol.\x20If\x20you\x20found\x20this\x20useful,\x20please\x20check\x20our\x20GitHub\x20project:</p>\x0a\x20\x20\x20\x20\x20\x20<p><a\x20href=\x22https://github.com/6Kmfi6HP/EDtunnel\x22\x20target=\x22_blank\x22\x20style=\x22color:\x20#00ff00;\x22>EDtunnel\x20-\x20https://github.com/6Kmfi6HP/EDtunnel</a></p>\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22clear:\x20both;\x22></div>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22btn-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22//','QA==','www.cnki.net','&path=/','flatMap','x-forwarded-for','www.aipai.com','websocket','url','www.ynet.com','www.pptv.com','values','www.sohu.com','5staNGs','www.guancha.cn','stringify','www.xueqiu.com','www.toutiao.com','/sub/','message','www.58.com','22FARaGL','substr','manual','readable','from','9389862KGtHsH','/\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20name=\x27twitter:image\x27\x20content=\x27https://ipfs.io/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:image:width\x27\x20content=\x271500\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:image:height\x27\x20content=\x271500\x27\x20/>\x0a\x0a\x20\x20\x20\x20<style>\x0a\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x27Roboto\x27,\x20\x27Segoe\x20UI\x27,\x20Tahoma,\x20Geneva,\x20Verdana,\x20sans-serif;\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#000000;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20line-height:\x201.6;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x201200px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.container\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#111111;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x204px\x206px\x20rgba(255,\x20255,\x20255,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20h1,\x20h2\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.config-item\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#222222;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#333333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2015px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.config-item\x20h3\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#000000;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s,\x20color\x200.3s;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#cccccc;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn-group\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2010px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.btn-group\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-right:\x2010px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20pre\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#333333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#444444;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20white-space:\x20pre-wrap;\x0a\x20\x20\x20\x20\x20\x20\x20\x20word-wrap:\x20break-word;\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#00ff00;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.logo\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20float:\x20left;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-right:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x09\x09max-width:\x2030%;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20@media\x20(max-width:\x20768px)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20.logo\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20float:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x2090%;\x20/*\x20Adjust\x20the\x20max-width\x20to\x20fit\x20within\x20the\x20container\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-group\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:\x20column;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-group\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.code-container\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20relative;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2015px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.code-container\x20pre\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-right:\x20100px;\x20/*\x20Make\x20space\x20for\x20the\x20button\x20*/\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.copy-btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20position:\x20absolute;\x0a\x20\x20\x20\x20\x20\x20\x20\x20top:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20right:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x205px\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x200.8em;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#222222;\x0a\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x204px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2015px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20h3\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x200;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20ul\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-left:\x2020px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20.subscription-info\x20li\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2010px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20</style>\x0a\x20\x20\x20\x20<link\x20rel=\x22stylesheet\x22\x20href=\x22https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\x22>\x0a\x20\x20</head>\x0a\x20\x20','www.hupu.com','socks\x20connection\x20opened','-HTTPS-','/bestip/','210aoVTku','\x0a\x20\x20<head>\x0a\x20\x20\x20\x20<title>EDtunnel:\x20Configuration</title>\x0a\x20\x20\x20\x20<meta\x20name=\x27viewport\x27\x20content=\x27width=device-width,\x20initial-scale=1\x27>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:site_name\x27\x20content=\x27EDtunnel:\x20Protocol\x20Configuration\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:type\x27\x20content=\x27website\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:title\x27\x20content=\x27EDtunnel\x20-\x20Protocol\x20Configuration\x20and\x20Subscribe\x20Output\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:description\x27\x20content=\x27Use\x20Cloudflare\x20Pages\x20and\x20Worker\x20serverless\x20to\x20implement\x20protocol\x27\x20/>\x0a\x20\x20\x20\x20<meta\x20property=\x27og:url\x27\x20content=\x27https://','Invalid\x20URL\x20format','www.360.cn','byteLength','network','www.tmtpost.com','status','www.baidu.com','encode','www.163.com','command\x20','enqueue','safeCloseWebSocket\x20error:','www.bilibili.com',':443?encryption=none&security=tls&sni=','RUR0dW5uZWw=','www.qqgongyi.com','application/json;charset=utf-8','www.douyin.com','www.mafengwo.cn','none','www.tudou.com','\x22\x20class=\x22btn\x22\x20target=\x22_blank\x22><i\x20class=\x22fas\x20fa-bolt\x22></i>\x20Clash\x20Link</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','?encryption=none&security=tls&sni=','write','www.zol.com.cn','trim','split','Host','www.youzu.com','www.netease.com',',\x20has\x20to\x20be\x20none\x20or\x20tls.','1797132nkXvEU','www.suning.com'];a0_0x7015=function(){return _0x24e6c7;};return a0_0x7015();}const byteToHex=Array[a0_0x164431(0x124)]({'length':0x100},(_0x52967d,_0x1b1c44)=>(_0x1b1c44+0x100)['toString'](0x10)[a0_0x164431(0x1d0)](0x1));function unsafeStringify(_0x7b658e,_0x4eeaaf=0x0){const _0x159a4d=a0_0x164431;return[byteToHex[_0x7b658e[_0x4eeaaf]],byteToHex[_0x7b658e[_0x4eeaaf+0x1]],byteToHex[_0x7b658e[_0x4eeaaf+0x2]],byteToHex[_0x7b658e[_0x4eeaaf+0x3]],'-',byteToHex[_0x7b658e[_0x4eeaaf+0x4]],byteToHex[_0x7b658e[_0x4eeaaf+0x5]],'-',byteToHex[_0x7b658e[_0x4eeaaf+0x6]],byteToHex[_0x7b658e[_0x4eeaaf+0x7]],'-',byteToHex[_0x7b658e[_0x4eeaaf+0x8]],byteToHex[_0x7b658e[_0x4eeaaf+0x9]],'-',byteToHex[_0x7b658e[_0x4eeaaf+0xa]],byteToHex[_0x7b658e[_0x4eeaaf+0xb]],byteToHex[_0x7b658e[_0x4eeaaf+0xc]],byteToHex[_0x7b658e[_0x4eeaaf+0xd]],byteToHex[_0x7b658e[_0x4eeaaf+0xe]],byteToHex[_0x7b658e[_0x4eeaaf+0xf]]][_0x159a4d(0x16f)]('')[_0x159a4d(0x172)]();}function stringify(_0x3b4ff8,_0x1b12a4=0x0){const _0x403094=unsafeStringify(_0x3b4ff8,_0x1b12a4);if(!isValidUUID(_0x403094))throw new TypeError('Stringified\x20UUID\x20is\x20invalid');return _0x403094;}async function handleUDPOutBound(_0x57d1dd,_0x534cc9,_0x1b09a2){const _0x2e7079=a0_0x164431;let _0x4ceb6b=![];const _0x280f6c=new TransformStream({'start'(_0x133682){},'transform'(_0x36742c,_0x59904b){const _0x1d3d0b=a0_0x57ef;for(let _0x186fd1=0x0;_0x186fd1<_0x36742c[_0x1d3d0b(0x12f)];){const _0x188c11=_0x36742c['slice'](_0x186fd1,_0x186fd1+0x2),_0x5be08f=new DataView(_0x188c11)[_0x1d3d0b(0x186)](0x0),_0xcb7670=new Uint8Array(_0x36742c['slice'](_0x186fd1+0x2,_0x186fd1+0x2+_0x5be08f));_0x186fd1=_0x186fd1+0x2+_0x5be08f,_0x59904b[_0x1d3d0b(0x137)](_0xcb7670);}},'flush'(_0x5beaef){}});_0x280f6c[_0x2e7079(0x123)]['pipeTo'](new WritableStream({async 'write'(_0x487d61){const _0x62a6=_0x2e7079,_0x13b62c=await fetch(dohURL,{'method':_0x62a6(0x17f),'headers':{'content-type':'application/dns-message'},'body':_0x487d61}),_0x38d1be=await _0x13b62c['arrayBuffer'](),_0xcb1b65=_0x38d1be[_0x62a6(0x12f)],_0x321769=new Uint8Array([_0xcb1b65>>0x8&0xff,_0xcb1b65&0xff]);_0x57d1dd[_0x62a6(0x17c)]===WS_READY_STATE_OPEN&&(_0x1b09a2('doh\x20success\x20and\x20dns\x20message\x20length\x20is\x20'+_0xcb1b65),_0x4ceb6b?_0x57d1dd[_0x62a6(0xf1)](await new Blob([_0x321769,_0x38d1be])[_0x62a6(0x1bb)]()):(_0x57d1dd[_0x62a6(0xf1)](await new Blob([_0x534cc9,_0x321769,_0x38d1be])[_0x62a6(0x1bb)]()),_0x4ceb6b=!![]));}}))['catch'](_0xaab2f7=>{const _0x17b25b=_0x2e7079;_0x1b09a2(_0x17b25b(0x1a7)+_0xaab2f7);});const _0x25e66b=_0x280f6c['writable'][_0x2e7079(0x18d)]();return{'write'(_0x111c66){_0x25e66b['write'](_0x111c66);}};}async function handleDNSQuery(_0x1533be,_0x5b0422,_0x23f4be,_0x27e79f){const _0x59a6b7=a0_0x164431;try{const _0x14f1bd='8.8.4.4',_0x198592=0x35;let _0x112eb9=_0x23f4be;const _0x3d0d0f=connect({'hostname':_0x14f1bd,'port':_0x198592});_0x27e79f('connected\x20to\x20'+_0x14f1bd+':'+_0x198592);const _0x1b12fd=_0x3d0d0f[_0x59a6b7(0x109)][_0x59a6b7(0x18d)]();await _0x1b12fd[_0x59a6b7(0x144)](_0x1533be),_0x1b12fd[_0x59a6b7(0x18c)](),await _0x3d0d0f[_0x59a6b7(0x123)][_0x59a6b7(0x1a5)](new WritableStream({async 'write'(_0x2297ed){const _0x77b723=_0x59a6b7;_0x5b0422[_0x77b723(0x17c)]===WS_READY_STATE_OPEN&&(_0x112eb9?(_0x5b0422[_0x77b723(0xf1)](await new Blob([_0x112eb9,_0x2297ed])[_0x77b723(0x1bb)]()),_0x112eb9=null):_0x5b0422[_0x77b723(0xf1)](_0x2297ed));},'close'(){const _0x3ebe29=_0x59a6b7;_0x27e79f(_0x3ebe29(0x199)+_0x14f1bd+_0x3ebe29(0x1cc));},'abort'(_0x5104f1){const _0x5a0b12=_0x59a6b7;console['error'](_0x5a0b12(0x199)+_0x14f1bd+_0x5a0b12(0x106),_0x5104f1);}}));}catch(_0x167039){console[_0x59a6b7(0x1d3)](_0x59a6b7(0x1c9)+_0x167039['message']);}}async function socks5Connect(_0x30ba3e,_0x546bb4,_0x2de4fd,_0xf99574){const _0x290484=a0_0x164431,{username:_0x20b142,password:_0x5291b0,hostname:_0x4755a4,port:_0x229acd}=parsedSocks5Address,_0x5633dd=connect({'hostname':_0x4755a4,'port':_0x229acd}),_0x1c8a77=new Uint8Array([0x5,0x2,0x0,0x2]),_0x4383ba=_0x5633dd[_0x290484(0x109)]['getWriter']();await _0x4383ba[_0x290484(0x144)](_0x1c8a77),_0xf99574(_0x290484(0x14e));const _0x47bd62=_0x5633dd[_0x290484(0x123)]['getReader'](),_0x2b6301=new TextEncoder();let _0xee4bc0=(await _0x47bd62[_0x290484(0x1c8)]())[_0x290484(0x1d1)];if(_0xee4bc0[0x0]!==0x5){_0xf99574(_0x290484(0x185)+_0xee4bc0[0x0]+'\x20expected:\x205');return;}if(_0xee4bc0[0x1]===0xff){_0xf99574('no\x20acceptable\x20methods');return;}if(_0xee4bc0[0x1]===0x2){_0xf99574(_0x290484(0x10a));if(!_0x20b142||!_0x5291b0){_0xf99574(_0x290484(0x1c0));return;}const _0x196ddc=new Uint8Array([0x1,_0x20b142['length'],..._0x2b6301['encode'](_0x20b142),_0x5291b0[_0x290484(0x153)],..._0x2b6301[_0x290484(0x134)](_0x5291b0)]);await _0x4383ba[_0x290484(0x144)](_0x196ddc),_0xee4bc0=(await _0x47bd62['read']())['value'];if(_0xee4bc0[0x0]!==0x1||_0xee4bc0[0x1]!==0x0){_0xf99574(_0x290484(0xeb));return;}}let _0x11c220;switch(_0x30ba3e){case 0x1:_0x11c220=new Uint8Array([0x1,..._0x546bb4[_0x290484(0x147)]('.')['map'](Number)]);break;case 0x2:_0x11c220=new Uint8Array([0x3,_0x546bb4[_0x290484(0x153)],..._0x2b6301[_0x290484(0x134)](_0x546bb4)]);break;case 0x3:_0x11c220=new Uint8Array([0x4,..._0x546bb4[_0x290484(0x147)](':')[_0x290484(0x10f)](_0x561676=>[parseInt(_0x561676[_0x290484(0x1d0)](0x0,0x2),0x10),parseInt(_0x561676[_0x290484(0x1d0)](0x2),0x10)])]);break;default:_0xf99574(_0x290484(0xfa)+_0x30ba3e);return;}const _0x5d0979=new Uint8Array([0x5,0x1,0x0,..._0x11c220,_0x2de4fd>>0x8,_0x2de4fd&0xff]);await _0x4383ba[_0x290484(0x144)](_0x5d0979),_0xf99574(_0x290484(0xf7)),_0xee4bc0=(await _0x47bd62['read']())[_0x290484(0x1d1)];if(_0xee4bc0[0x1]===0x0)_0xf99574(_0x290484(0x128));else{_0xf99574(_0x290484(0x19a));return;}return _0x4383ba[_0x290484(0x18c)](),_0x47bd62[_0x290484(0x18c)](),_0x5633dd;}function socks5AddressParser(_0x38665d){const _0x3cb4a3=a0_0x164431;let [_0x36ca30,_0x40359e]=_0x38665d['split']('@')[_0x3cb4a3(0x1d7)](),_0x43f58f,_0x55cedb,_0x20570d,_0x976c87;if(_0x40359e){const _0x55312=_0x40359e[_0x3cb4a3(0x147)](':');if(_0x55312[_0x3cb4a3(0x153)]!==0x2)throw new Error(_0x3cb4a3(0x162));[_0x43f58f,_0x55cedb]=_0x55312;}const _0x10145b=_0x36ca30[_0x3cb4a3(0x147)](':');_0x976c87=Number(_0x10145b['pop']());if(isNaN(_0x976c87))throw new Error(_0x3cb4a3(0x162));_0x20570d=_0x10145b[_0x3cb4a3(0x16f)](':');const _0x35bc39=/^\[.*\]$/;if(_0x20570d['includes'](':')&&!_0x35bc39[_0x3cb4a3(0xf3)](_0x20570d))throw new Error('Invalid\x20SOCKS\x20address\x20format');return{'username':_0x43f58f,'password':_0x55cedb,'hostname':_0x20570d,'port':_0x976c87};}async function parseTrojanHeader(_0x5c2643){const _0x58977f=a0_0x164431;if(_0x5c2643[_0x58977f(0x12f)]<0x3a)return{'hasError':!![],'message':'Invalid\x20data\x20length'};const _0x14850e=new DataView(_0x5c2643);if(_0x14850e[_0x58977f(0x1b7)](0x38)!==0xd||_0x14850e[_0x58977f(0x1b7)](0x39)!==0xa)return{'hasError':!![],'message':_0x58977f(0x16e)};const _0x266f2c=new TextDecoder()[_0x58977f(0x1a1)](_0x5c2643[_0x58977f(0x1d0)](0x0,0x38));if(_0x266f2c!==Sha256[_0x58977f(0x1b4)](userID))return{'hasError':!![],'message':_0x58977f(0x17a)};const _0x7bf3d0=new DataView(_0x5c2643,0x3a);if(_0x7bf3d0['byteLength']<0x6)return{'hasError':!![],'message':_0x58977f(0x176)};if(_0x7bf3d0['getUint8'](0x0)!==0x1)return{'hasError':!![],'message':'Unsupported\x20command,\x20only\x20TCP\x20(CONNECT)\x20is\x20allowed'};const _0xbe0c49=_0x7bf3d0['getUint8'](0x1);let _0x4c1fe5,_0x2e978c;switch(_0xbe0c49){case 0x1:_0x4c1fe5=Array[_0x58977f(0x124)](new Uint8Array(_0x7bf3d0[_0x58977f(0x1d5)],_0x7bf3d0[_0x58977f(0x160)]+0x2,0x4))['join']('.'),_0x2e978c=0x6;break;case 0x3:const _0x14c573=_0x7bf3d0['getUint8'](0x2);_0x4c1fe5=new TextDecoder()['decode'](_0x7bf3d0['buffer']['slice'](_0x7bf3d0[_0x58977f(0x160)]+0x3,_0x7bf3d0[_0x58977f(0x160)]+0x3+_0x14c573)),_0x2e978c=0x3+_0x14c573;break;case 0x4:_0x4c1fe5=Array[_0x58977f(0x124)](new Uint8Array(_0x7bf3d0[_0x58977f(0x1d5)],_0x7bf3d0[_0x58977f(0x160)]+0x2,0x10))['map'](_0x4c9e2a=>_0x4c9e2a[_0x58977f(0x1cf)](0x10)[_0x58977f(0x164)](0x2,'0'))[_0x58977f(0x16f)](':')[_0x58977f(0x156)](/(:0)+:/,'::'),_0x2e978c=0x12;break;default:return{'hasError':!![],'message':'Invalid\x20address\x20type:\x20'+_0xbe0c49};}const _0x4139aa=_0x7bf3d0['getUint16'](_0x2e978c);return{'hasError':![],'address':_0x4c1fe5,'port':_0x4139aa,'data':_0x5c2643[_0x58977f(0x1d0)](0x3a+_0x2e978c+0x2)};}const VlessCmd={'TCP':0x1,'UDP':0x2,'MUX':0x3},VlessAddrType={'IPv4':0x1,'DomainName':0x2,'IPv6':0x3};function makeVlessReqHeader(_0x4784f1,_0x4edd58,_0x4d96cc,_0x297e7c,_0x185751){const _0x5b2820=a0_0x164431;let _0x23419e,_0x57cbf4;switch(_0x4edd58){case VlessAddrType[_0x5b2820(0x17e)]:_0x23419e=0x4;break;case VlessAddrType[_0x5b2820(0x15c)]:_0x57cbf4=new TextEncoder()[_0x5b2820(0x134)](_0x4d96cc),_0x23419e=_0x57cbf4[_0x5b2820(0x153)]+0x1;break;case VlessAddrType['IPv6']:_0x23419e=0x10;break;default:throw new Error('Unknown\x20address\x20type:\x20'+_0x4edd58);}const _0x146569=_0x185751[_0x5b2820(0x156)](/-/g,''),_0x10148d=0x1,_0x1a5440=new Uint8Array(0x16+_0x23419e);_0x1a5440[0x0]=0x0;for(let _0x3a8110=0x0;_0x3a8110<_0x146569[_0x5b2820(0x153)];_0x3a8110+=0x2){_0x1a5440[_0x10148d+_0x3a8110/0x2]=parseInt(_0x146569[_0x5b2820(0x121)](_0x3a8110,0x2),0x10);}_0x1a5440[0x11]=0x0,_0x1a5440[0x12]=_0x4784f1,_0x1a5440[0x13]=_0x297e7c>>0x8,_0x1a5440[0x14]=_0x297e7c&0xff,_0x1a5440[0x15]=_0x4edd58;switch(_0x4edd58){case VlessAddrType[_0x5b2820(0x17e)]:const _0xdd8941=_0x4d96cc[_0x5b2820(0x147)]('.');for(let _0x230fe9=0x0;_0x230fe9<0x4;_0x230fe9++){_0x1a5440[0x16+_0x230fe9]=parseInt(_0xdd8941[_0x230fe9]);}break;case VlessAddrType[_0x5b2820(0x15c)]:_0x1a5440[0x16]=_0x57cbf4['length'],_0x1a5440['set'](_0x57cbf4,0x17);break;case VlessAddrType['IPv6']:const _0x3c5d6d=ipv6[_0x5b2820(0x147)](':');for(let _0x182529=0x0;_0x182529<0x8;_0x182529++){const _0x17c432=parseInt(_0x3c5d6d[_0x182529],0x10);_0x1a5440[_0x182529*0x2+0x16]=_0x17c432>>0x8,_0x1a5440[_0x182529*0x2+0x17]=_0x17c432&0xff;}break;default:throw new Error(_0x5b2820(0x154)+_0x4edd58);}return _0x1a5440;}function checkVlessConfig(_0x387a33,_0x22cf36){const _0x239ab2=a0_0x164431;if(_0x22cf36[_0x239ab2(0x130)]!=='ws')throw new Error(_0x239ab2(0x1bf)+_0x22cf36[_0x239ab2(0x130)]+_0x239ab2(0x1a3));if(_0x22cf36[_0x239ab2(0x15b)]!==_0x239ab2(0xff)&&_0x22cf36['security']!==_0x239ab2(0x140))throw new Error('Usupported\x20security\x20layer:\x20'+_0x22cf36['network']+_0x239ab2(0x14b));if(_0x22cf36[_0x239ab2(0xef)]&&_0x22cf36[_0x239ab2(0xef)][_0x239ab2(0x181)]&&_0x22cf36['wsSettings'][_0x239ab2(0x181)][_0x239ab2(0x148)]!==_0x387a33)throw new Error(_0x239ab2(0x1cd));if(_0x22cf36['tlsSettings']&&_0x22cf36[_0x239ab2(0xfb)][_0x239ab2(0x177)]!==_0x387a33)throw new Error(_0x239ab2(0x1ba));}function parseVlessString(_0x54d725){const _0x2d00b5=a0_0x164431,_0x41ee48=/^(.+):\/\/(.+?)@(.+?):(\d+)(\?[^#]*)?(#.*)?$/,_0xf322c2=_0x54d725['match'](_0x41ee48);if(!_0xf322c2)throw new Error(_0x2d00b5(0x12d));const [,_0x549ef2,_0x323565,_0x4a22c6,_0x3e605d,_0x11be41,_0x4779f5]=_0xf322c2,_0x23f139={'protocol':_0x549ef2,'uuid':_0x323565,'remoteHost':_0x4a22c6,'remotePort':parseInt(_0x3e605d),'descriptiveText':_0x4779f5?_0x4779f5['substring'](0x1):'','queryParams':{}};if(_0x11be41){const _0x4d1b21=_0x11be41['substring'](0x1)[_0x2d00b5(0x147)]('&');_0x4d1b21[_0x2d00b5(0x1c2)](_0x2d0a60=>{const _0x32719b=_0x2d00b5,[_0x5de616,_0x1494ac]=_0x2d0a60[_0x32719b(0x147)]('=');_0x23f139[_0x32719b(0x1da)][_0x5de616]=_0x1494ac;});}return _0x23f139;}const at=a0_0x164431(0x10c),pt=a0_0x164431(0x1b1),ed=a0_0x164431(0x13b);function getConfig(_0x15ea15,_0x366156){const _0x2af30b=a0_0x164431,_0x5d59d0=_0x2af30b(0x13a)+_0x366156+_0x2af30b(0x14f)+_0x366156+_0x2af30b(0x16b)+_0x366156,_0x29bd70=_0x15ea15[_0x2af30b(0x147)](','),_0x4e921a='https://'+_0x366156+'/sub/'+_0x29bd70[0x0]+_0x2af30b(0x183),_0x125825=_0x2af30b(0x18f)+_0x366156+_0x2af30b(0x12a)+_0x29bd70[0x0],_0x7d7cd6=_0x2af30b(0xea)+encodeURIComponent(_0x4e921a)+_0x2af30b(0x1a6),_0x4dac38=_0x2af30b(0x12c)+_0x366156+_0x2af30b(0x1bc)+_0x366156+_0x2af30b(0x126),_0x5e3e31=_0x2af30b(0x10b)+_0x366156+_0x2af30b(0x11d)+_0x29bd70[0x0]+_0x2af30b(0x174)+encodeURIComponent(_0x2af30b(0x18f)+_0x366156+'/sub/'+_0x29bd70[0x0]+'?format=clash')+_0x2af30b(0x1bd)+_0x7d7cd6+_0x2af30b(0x142)+_0x125825+_0x2af30b(0x1ce),_0x343461=_0x29bd70[_0x2af30b(0x167)](_0x5211bb=>{const _0x11d0bc=_0x2af30b,_0x5d50af=atob(pt)+_0x11d0bc(0xee)+_0x5211bb+atob(at)+_0x366156+_0x5d59d0,_0x412b89=atob(pt)+_0x11d0bc(0xee)+_0x5211bb+atob(at)+proxyIP+_0x5d59d0;return _0x11d0bc(0x19b)+_0x5211bb+_0x11d0bc(0x101)+_0x5d50af+_0x11d0bc(0x1b6)+_0x5d50af+_0x11d0bc(0x18e)+_0x412b89+_0x11d0bc(0x1b6)+_0x412b89+'\x22)\x27><i\x20class=\x22fas\x20fa-copy\x22></i>\x20Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';})[_0x2af30b(0x16f)]('');return'\x0a\x20\x20<html>\x0a\x20\x20'+_0x4dac38+_0x2af30b(0x15a)+_0x5e3e31+_0x2af30b(0x1be)+_0x343461+_0x2af30b(0x184);}const HttpPort=new Set([0x50,0x1f90,0x22b0,0x804,0x826,0x82f,0x822]),HttpsPort=new Set([0x1bb,0x20fb,0x805,0x830,0x827,0x823]);function GenSub(_0x3e5880,_0x11f93c){const _0x1c6ba2=a0_0x164431,_0x5a7a08=_0x3e5880['includes'](',')?_0x3e5880['split'](','):[_0x3e5880],_0x58652d=()=>'/'+Math['random']()['toString'](0x24)[_0x1c6ba2(0x1ac)](0x2,0xf)+_0x1c6ba2(0x1b2),_0x2c8f69='?encryption=none&security=none&fp=random&type=ws&host='+_0x11f93c+_0x1c6ba2(0x17d)+encodeURIComponent(_0x58652d())+'#',_0x125954=_0x1c6ba2(0x143)+_0x11f93c+'&fp=random&type=ws&host='+_0x11f93c+'&path=%2F%3Fed%3D2048#',_0x5bdb6c=_0x5a7a08['flatMap'](_0x427964=>{const _0x75b4ab=_0x1c6ba2,_0xb8d71c=Array[_0x75b4ab(0x124)](HttpPort)['flatMap'](_0x4c99d0=>{const _0x587bf2=_0x75b4ab;if(!_0x11f93c['includes'](_0x587bf2(0x15e))){const _0x37e50c=_0x11f93c+_0x587bf2(0x161)+_0x4c99d0,_0x3d5e1c=atob(pt)+_0x587bf2(0xee)+_0x427964+atob(at)+_0x11f93c+':'+_0x4c99d0+_0x2c8f69+_0x37e50c;return proxyIPs[_0x587bf2(0x10f)](_0x3681b8=>{const _0x4a2fab=_0x587bf2,_0x39f169=atob(pt)+_0x4a2fab(0xee)+_0x427964+atob(at)+_0x3681b8+':'+_0x4c99d0+_0x2c8f69+_0x37e50c+'-'+_0x3681b8+'-'+atob(ed);return[_0x3d5e1c,_0x39f169];});}return[];}),_0x1f4772=Array[_0x75b4ab(0x124)](HttpsPort)[_0x75b4ab(0x10f)](_0x34683f=>{const _0x1f6a6d=_0x75b4ab,_0x419bd1=_0x11f93c+_0x1f6a6d(0x129)+_0x34683f,_0x55f110=atob(pt)+'://'+_0x427964+atob(at)+_0x11f93c+':'+_0x34683f+_0x125954+_0x419bd1;return proxyIPs[_0x1f6a6d(0x10f)](_0x37457d=>{const _0x107865=_0x1f6a6d,_0x34266d=atob(pt)+_0x107865(0xee)+_0x427964+atob(at)+_0x37457d+':'+_0x34683f+_0x125954+_0x419bd1+'-'+_0x37457d+'-'+atob(ed);return[_0x55f110,_0x34266d];});});return[..._0xb8d71c,..._0x1f4772];});return _0x5bdb6c['join']('\x0a');}const hostnames=[a0_0x164431(0x187),a0_0x164431(0x133),a0_0x164431(0x1c5),a0_0x164431(0x1ae),a0_0x164431(0x1b8),a0_0x164431(0x17b),a0_0x164431(0x117),a0_0x164431(0x1b5),a0_0x164431(0x135),a0_0x164431(0xe8),a0_0x164431(0x193),a0_0x164431(0x1d9),a0_0x164431(0x19f),a0_0x164431(0xe6),a0_0x164431(0x11c),a0_0x164431(0x1ca),a0_0x164431(0x1a2),a0_0x164431(0x12e),a0_0x164431(0x13e),a0_0x164431(0x107),'www.wechat.com',a0_0x164431(0x170),'www.imgo.tv','www.aliyun.com',a0_0x164431(0x15f),a0_0x164431(0xf9),'www.xunlei.com',a0_0x164431(0xf0),a0_0x164431(0x139),a0_0x164431(0x165),a0_0x164431(0x127),a0_0x164431(0x149),a0_0x164431(0x18b),a0_0x164431(0x141),a0_0x164431(0x145),a0_0x164431(0x1af),'www.tiktok.com',a0_0x164431(0x14a),a0_0x164431(0x10d),a0_0x164431(0x1c4),a0_0x164431(0x192),a0_0x164431(0x11b),a0_0x164431(0x13c),a0_0x164431(0xfe),a0_0x164431(0x15d),a0_0x164431(0x14d),a0_0x164431(0xfd),a0_0x164431(0x1b3),a0_0x164431(0x13f),a0_0x164431(0x1a0),a0_0x164431(0xf5),a0_0x164431(0x105),a0_0x164431(0x159),a0_0x164431(0x19d),'www.telegraph.co.uk',a0_0x164431(0x114),a0_0x164431(0xe9),a0_0x164431(0xe4),a0_0x164431(0x115),a0_0x164431(0x175),a0_0x164431(0x103),a0_0x164431(0x111),'www.ttpaihang.com',a0_0x164431(0x150),a0_0x164431(0x198),a0_0x164431(0xf6),a0_0x164431(0x131),a0_0x164431(0x19f),a0_0x164431(0x119),'www.so.com',a0_0x164431(0x11f),a0_0x164431(0x19c),a0_0x164431(0x195),a0_0x164431(0xec)];
+// @ts-ignore
+import { connect } from 'cloudflare:sockets';
+
+// How to generate your own UUID:
+// [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
+let userID = '59274f05-1440-4ab0-9edf-d5986e1836b5';
+
+const พร็อกซีไอพีs = ['178.128.91.137'];
+
+// if you want to use ipv6 or single พร็อกซีไอพี, please add comment at this line and remove comment at the next line
+let พร็อกซีไอพี = พร็อกซีไอพีs[Math.floor(Math.random() * พร็อกซีไอพีs.length)];
+// use single พร็อกซีไอพี instead of random
+// let พร็อกซีไอพี = 'cdn.xn--b6gac.eu.org';
+// ipv6 พร็อกซีไอพี example remove comment to use
+// let พร็อกซีไอพี = "[2a01:4f8:c2c:123f:64:5:6810:c55a]"
+
+let dohURL = 'https://sky.rethinkdns.com/1:-Pf_____9_8A_AMAIgE8kMABVDDmKOHTAKg='; // https://cloudflare-dns.com/dns-query or https://dns.google/dns-query
+
+if (!isValidUUID(userID)) {
+	throw new Error('uuid is invalid');
+}
+
+export default {
+	/**
+	 * @param {import("@cloudflare/workers-types").Request} request
+	 * @param {{UUID: string, พร็อกซีไอพี: string, DNS_RESOLVER_URL: string, NODE_ID: int, API_HOST: string, API_TOKEN: string}} env
+	 * @param {import("@cloudflare/workers-types").ExecutionContext} ctx
+	 * @returns {Promise<Response>}
+	 */
+	async fetch(request, env, ctx) {
+		// uuid_validator(request);
+		try {
+			userID = env.UUID || userID;
+			พร็อกซีไอพี = env.PROXYIP || พร็อกซีไอพี;
+			dohURL = env.DNS_RESOLVER_URL || dohURL;
+			let userID_Path = userID;
+			if (userID.includes(',')) {
+				userID_Path = userID.split(',')[0];
+			}
+			const upgradeHeader = request.headers.get('Upgrade');
+			if (!upgradeHeader || upgradeHeader !== 'websocket') {
+				const url = new URL(request.url);
+				switch (url.pathname) {
+					case `/cf`: {
+						return new Response(JSON.stringify(request.cf, null, 4), {
+							status: 200,
+							headers: {
+								"Content-Type": "application/json;charset=utf-8",
+							},
+						});
+					}
+					case `/${userID_Path}`: {
+						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'));
+						return new Response(`${วเลสConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Type": "text/html; charset=utf-8",
+							}
+						});
+					};
+					case `/sub/${userID_Path}`: {
+						const url = new URL(request.url);
+						const searchParams = url.searchParams;
+						const วเลสSubConfig = สร้างวเลสSub(userID, request.headers.get('Host'));
+						// Construct and return response object
+						return new Response(btoa(วเลสSubConfig), {
+							status: 200,
+							headers: {
+								"Content-Type": "text/plain;charset=utf-8",
+							}
+						});
+					};
+					case `/bestip/${userID_Path}`: {
+						const headers = request.headers;
+						const url = `https://sub.xf.free.hr/auto?host=${request.headers.get('Host')}&uuid=${userID}&path=/`;
+						const bestSubConfig = await fetch(url, { headers: headers });
+						return bestSubConfig;
+					};
+					default:
+						// return new Response('Not found', { status: 404 });
+						// For any other path, reverse proxy to 'ramdom website' and return the original response, caching it in the process
+						const randomHostname = cn_hostnames[Math.floor(Math.random() * cn_hostnames.length)];
+						const newHeaders = new Headers(request.headers);
+						newHeaders.set('cf-connecting-ip', '1.2.3.4');
+						newHeaders.set('x-forwarded-for', '1.2.3.4');
+						newHeaders.set('x-real-ip', '1.2.3.4');
+						newHeaders.set('referer', 'https://www.google.com/search?q=edtunnel');
+						// Use fetch to proxy the request to 15 different domains
+						const proxyUrl = 'https://' + randomHostname + url.pathname + url.search;
+						let modifiedRequest = new Request(proxyUrl, {
+							method: request.method,
+							headers: newHeaders,
+							body: request.body,
+							redirect: 'manual',
+						});
+						const proxyResponse = await fetch(modifiedRequest, { redirect: 'manual' });
+						// Check for 302 or 301 redirect status and return an error response
+						if ([301, 302].includes(proxyResponse.status)) {
+							return new Response(`Redirects to ${randomHostname} are not allowed.`, {
+								status: 403,
+								statusText: 'Forbidden',
+							});
+						}
+						// Return the response from the proxy server
+						return proxyResponse;
+				}
+			} else {
+				return await วเลสOverWSHandler(request);
+			}
+		} catch (err) {
+			/** @type {Error} */ let e = err;
+			return new Response(e.toString());
+		}
+	},
+};
+
+export async function uuid_validator(request) {
+	const hostname = request.headers.get('Host');
+	const currentDate = new Date();
+
+	const subdomain = hostname.split('.')[0];
+	const year = currentDate.getFullYear();
+	const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+	const day = String(currentDate.getDate()).padStart(2, '0');
+
+	const formattedDate = `${year}-${month}-${day}`;
+
+	// const daliy_sub = formattedDate + subdomain
+	const hashHex = await hashHex_f(subdomain);
+	// subdomain string contains timestamps utc and uuid string TODO.
+	console.log(hashHex, subdomain, formattedDate);
+}
+
+export async function hashHex_f(string) {
+	const encoder = new TextEncoder();
+	const data = encoder.encode(string);
+	const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+	const hashArray = Array.from(new Uint8Array(hashBuffer));
+	const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+	return hashHex;
+}
+
+/**
+ * Handles วเลส over WebSocket requests by creating a WebSocket pair, accepting the WebSocket connection, and processing the วเลส header.
+ * @param {import("@cloudflare/workers-types").Request} request The incoming request object.
+ * @returns {Promise<Response>} A Promise that resolves to a WebSocket response object.
+ */
+async function วเลสOverWSHandler(request) {
+	const webSocketPair = new WebSocketPair();
+	const [client, webSocket] = Object.values(webSocketPair);
+	webSocket.accept();
+
+	let address = '';
+	let portWithRandomLog = '';
+	let currentDate = new Date();
+	const log = (/** @type {string} */ info, /** @type {string | undefined} */ event) => {
+		console.log(`[${currentDate} ${address}:${portWithRandomLog}] ${info}`, event || '');
+	};
+	const earlyDataHeader = request.headers.get('sec-websocket-protocol') || '';
+
+	const readableWebSocketStream = makeReadableWebSocketStream(webSocket, earlyDataHeader, log);
+
+	/** @type {{ value: import("@cloudflare/workers-types").Socket | null}}*/
+	let remoteSocketWapper = {
+		value: null,
+	};
+	let udpStreamWrite = null;
+	let isDns = false;
+
+	// ws --> remote
+	readableWebSocketStream.pipeTo(new WritableStream({
+		async write(chunk, controller) {
+			if (isDns && udpStreamWrite) {
+				return udpStreamWrite(chunk);
+			}
+			if (remoteSocketWapper.value) {
+				const writer = remoteSocketWapper.value.writable.getWriter()
+				await writer.write(chunk);
+				writer.releaseLock();
+				return;
+			}
+
+			const {
+				hasError,
+				message,
+				portRemote = 443,
+				addressRemote = '',
+				rawDataIndex,
+				วเลสVersion = new Uint8Array([0, 0]),
+				isUDP,
+			} = processวเลสHeader(chunk, userID);
+			address = addressRemote;
+			portWithRandomLog = `${portRemote} ${isUDP ? 'udp' : 'tcp'} `;
+			if (hasError) {
+				// controller.error(message);
+				throw new Error(message); // cf seems has bug, controller.error will not end stream
+			}
+
+			// If UDP and not DNS port, close it
+			if (isUDP && portRemote !== 53) {
+				throw new Error('UDP proxy only enabled for DNS which is port 53');
+				// cf seems has bug, controller.error will not end stream
+			}
+
+			if (isUDP && portRemote === 53) {
+				isDns = true;
+			}
+
+			// ["version", "附加信息长度 N"]
+			const วเลสResponseHeader = new Uint8Array([วเลสVersion[0], 0]);
+			const rawClientData = chunk.slice(rawDataIndex);
+
+			// TODO: support udp here when cf runtime has udp support
+			if (isDns) {
+				const { write } = await handleUDPOutBound(webSocket, วเลสResponseHeader, log);
+				udpStreamWrite = write;
+				udpStreamWrite(rawClientData);
+				return;
+			}
+			handleTCPOutBound(remoteSocketWapper, addressRemote, portRemote, rawClientData, webSocket, วเลสResponseHeader, log);
+		},
+		close() {
+			log(`readableWebSocketStream is close`);
+		},
+		abort(reason) {
+			log(`readableWebSocketStream is abort`, JSON.stringify(reason));
+		},
+	})).catch((err) => {
+		log('readableWebSocketStream pipeTo error', err);
+	});
+
+	return new Response(null, {
+		status: 101,
+		webSocket: client,
+	});
+}
+
+/**
+ * Handles outbound TCP connections.
+ *
+ * @param {any} remoteSocket 
+ * @param {string} addressRemote The remote address to connect to.
+ * @param {number} portRemote The remote port to connect to.
+ * @param {Uint8Array} rawClientData The raw client data to write.
+ * @param {import("@cloudflare/workers-types").WebSocket} webSocket The WebSocket to pass the remote socket to.
+ * @param {Uint8Array} วเลสResponseHeader The วเลส response header.
+ * @param {function} log The logging function.
+ * @returns {Promise<void>} The remote socket.
+ */
+async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawClientData, webSocket, วเลสResponseHeader, log,) {
+
+	/**
+	 * Connects to a given address and port and writes data to the socket.
+	 * @param {string} address The address to connect to.
+	 * @param {number} port The port to connect to.
+	 * @returns {Promise<import("@cloudflare/workers-types").Socket>} A Promise that resolves to the connected socket.
+	 */
+	async function connectAndWrite(address, port) {
+		/** @type {import("@cloudflare/workers-types").Socket} */
+		const tcpSocket = connect({
+			hostname: address,
+			port: port,
+		});
+		remoteSocket.value = tcpSocket;
+		log(`connected to ${address}:${port}`);
+		const writer = tcpSocket.writable.getWriter();
+		await writer.write(rawClientData); // first write, nomal is tls client hello
+		writer.releaseLock();
+		return tcpSocket;
+	}
+
+	/**
+	 * Retries connecting to the remote address and port if the Cloudflare socket has no incoming data.
+	 * @returns {Promise<void>} A Promise that resolves when the retry is complete.
+	 */
+	async function retry() {
+		const tcpSocket = await connectAndWrite(พร็อกซีไอพี || addressRemote, portRemote)
+		tcpSocket.closed.catch(error => {
+			console.log('retry tcpSocket closed error', error);
+		}).finally(() => {
+			safeCloseWebSocket(webSocket);
+		})
+		remoteSocketToWS(tcpSocket, webSocket, วเลสResponseHeader, null, log);
+	}
+
+	const tcpSocket = await connectAndWrite(addressRemote, portRemote);
+
+	// when remoteSocket is ready, pass to websocket
+	// remote--> ws
+	remoteSocketToWS(tcpSocket, webSocket, วเลสResponseHeader, retry, log);
+}
+
+/**
+ * Creates a readable stream from a WebSocket server, allowing for data to be read from the WebSocket.
+ * @param {import("@cloudflare/workers-types").WebSocket} webSocketServer The WebSocket server to create the readable stream from.
+ * @param {string} earlyDataHeader The header containing early data for WebSocket 0-RTT.
+ * @param {(info: string)=> void} log The logging function.
+ * @returns {ReadableStream} A readable stream that can be used to read data from the WebSocket.
+ */
+function makeReadableWebSocketStream(webSocketServer, earlyDataHeader, log) {
+	let readableStreamCancel = false;
+	const stream = new ReadableStream({
+		start(controller) {
+			webSocketServer.addEventListener('message', (event) => {
+				const message = event.data;
+				controller.enqueue(message);
+			});
+
+			webSocketServer.addEventListener('close', () => {
+				safeCloseWebSocket(webSocketServer);
+				controller.close();
+			});
+
+			webSocketServer.addEventListener('error', (err) => {
+				log('webSocketServer has error');
+				controller.error(err);
+			});
+			const { earlyData, error } = base64ToArrayBuffer(earlyDataHeader);
+			if (error) {
+				controller.error(error);
+			} else if (earlyData) {
+				controller.enqueue(earlyData);
+			}
+		},
+
+		pull(controller) {
+			// if ws can stop read if stream is full, we can implement backpressure
+			// https://streams.spec.whatwg.org/#example-rs-push-backpressure
+		},
+
+		cancel(reason) {
+			log(`ReadableStream was canceled, due to ${reason}`)
+			readableStreamCancel = true;
+			safeCloseWebSocket(webSocketServer);
+		}
+	});
+
+	return stream;
+}
+
+// https://xtls.github.io/development/protocols/วเลส.html
+// https://github.com/zizifn/excalidraw-backup/blob/main/v2ray-protocol.excalidraw
+
+/**
+ * Processes the วเลส header buffer and returns an object with the relevant information.
+ * @param {ArrayBuffer} วเลสBuffer The วเลส header buffer to process.
+ * @param {string} userID The user ID to validate against the UUID in the วเลส header.
+ * @returns {{
+ *  hasError: boolean,
+ *  message?: string,
+ *  addressRemote?: string,
+ *  addressType?: number,
+ *  portRemote?: number,
+ *  rawDataIndex?: number,
+ *  วเลสVersion?: Uint8Array,
+ *  isUDP?: boolean
+ * }} An object with the relevant information extracted from the วเลส header buffer.
+ */
+function processวเลสHeader(วเลสBuffer, userID) {
+	if (วเลสBuffer.byteLength < 24) {
+		return {
+			hasError: true,
+			message: 'invalid data',
+		};
+	}
+
+	const version = new Uint8Array(วเลสBuffer.slice(0, 1));
+	let isValidUser = false;
+	let isUDP = false;
+	const slicedBuffer = new Uint8Array(วเลสBuffer.slice(1, 17));
+	const slicedBufferString = stringify(slicedBuffer);
+	// check if userID is valid uuid or uuids split by , and contains userID in it otherwise return error message to console
+	const uuids = userID.includes(',') ? userID.split(",") : [userID];
+	// uuid_validator(hostName, slicedBufferString);
+
+
+	// isValidUser = uuids.some(userUuid => slicedBufferString === userUuid.trim());
+	isValidUser = uuids.some(userUuid => slicedBufferString === userUuid.trim()) || uuids.length === 1 && slicedBufferString === uuids[0].trim();
+
+	console.log(`userID: ${slicedBufferString}`);
+
+	if (!isValidUser) {
+		return {
+			hasError: true,
+			message: 'invalid user',
+		};
+	}
+
+	const optLength = new Uint8Array(วเลสBuffer.slice(17, 18))[0];
+	//skip opt for now
+
+	const command = new Uint8Array(
+		วเลสBuffer.slice(18 + optLength, 18 + optLength + 1)
+	)[0];
+
+	// 0x01 TCP
+	// 0x02 UDP
+	// 0x03 MUX
+	if (command === 1) {
+		isUDP = false;
+	} else if (command === 2) {
+		isUDP = true;
+	} else {
+		return {
+			hasError: true,
+			message: `command ${command} is not support, command 01-tcp,02-udp,03-mux`,
+		};
+	}
+	const portIndex = 18 + optLength + 1;
+	const portBuffer = วเลสBuffer.slice(portIndex, portIndex + 2);
+	// port is big-Endian in raw data etc 80 == 0x005d
+	const portRemote = new DataView(portBuffer).getUint16(0);
+
+	let addressIndex = portIndex + 2;
+	const addressBuffer = new Uint8Array(
+		วเลสBuffer.slice(addressIndex, addressIndex + 1)
+	);
+
+	// 1--> ipv4  addressLength =4
+	// 2--> domain name addressLength=addressBuffer[1]
+	// 3--> ipv6  addressLength =16
+	const addressType = addressBuffer[0];
+	let addressLength = 0;
+	let addressValueIndex = addressIndex + 1;
+	let addressValue = '';
+	switch (addressType) {
+		case 1:
+			addressLength = 4;
+			addressValue = new Uint8Array(
+				วเลสBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			).join('.');
+			break;
+		case 2:
+			addressLength = new Uint8Array(
+				วเลสBuffer.slice(addressValueIndex, addressValueIndex + 1)
+			)[0];
+			addressValueIndex += 1;
+			addressValue = new TextDecoder().decode(
+				วเลสBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			);
+			break;
+		case 3:
+			addressLength = 16;
+			const dataView = new DataView(
+				วเลสBuffer.slice(addressValueIndex, addressValueIndex + addressLength)
+			);
+			// 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+			const ipv6 = [];
+			for (let i = 0; i < 8; i++) {
+				ipv6.push(dataView.getUint16(i * 2).toString(16));
+			}
+			addressValue = ipv6.join(':');
+			// seems no need add [] for ipv6
+			break;
+		default:
+			return {
+				hasError: true,
+				message: `invild  addressType is ${addressType}`,
+			};
+	}
+	if (!addressValue) {
+		return {
+			hasError: true,
+			message: `addressValue is empty, addressType is ${addressType}`,
+		};
+	}
+
+	return {
+		hasError: false,
+		addressRemote: addressValue,
+		addressType,
+		portRemote,
+		rawDataIndex: addressValueIndex + addressLength,
+		วเลสVersion: version,
+		isUDP,
+	};
+}
+
+
+/**
+ * Converts a remote socket to a WebSocket connection.
+ * @param {import("@cloudflare/workers-types").Socket} remoteSocket The remote socket to convert.
+ * @param {import("@cloudflare/workers-types").WebSocket} webSocket The WebSocket to connect to.
+ * @param {ArrayBuffer | null} วเลสResponseHeader The วเลส response header.
+ * @param {(() => Promise<void>) | null} retry The function to retry the connection if it fails.
+ * @param {(info: string) => void} log The logging function.
+ * @returns {Promise<void>} A Promise that resolves when the conversion is complete.
+ */
+async function remoteSocketToWS(remoteSocket, webSocket, วเลสResponseHeader, retry, log) {
+	// remote--> ws
+	let remoteChunkCount = 0;
+	let chunks = [];
+	/** @type {ArrayBuffer | null} */
+	let วเลสHeader = วเลสResponseHeader;
+	let hasIncomingData = false; // check if remoteSocket has incoming data
+	await remoteSocket.readable
+		.pipeTo(
+			new WritableStream({
+				start() {
+				},
+				/**
+				 * 
+				 * @param {Uint8Array} chunk 
+				 * @param {*} controller 
+				 */
+				async write(chunk, controller) {
+					hasIncomingData = true;
+					remoteChunkCount++;
+					if (webSocket.readyState !== WS_READY_STATE_OPEN) {
+						controller.error(
+							'webSocket.readyState is not open, maybe close'
+						);
+					}
+					if (วเลสHeader) {
+						webSocket.send(await new Blob([วเลสHeader, chunk]).arrayBuffer());
+						วเลสHeader = null;
+					} else {
+						// console.log(`remoteSocketToWS send chunk ${chunk.byteLength}`);
+						// seems no need rate limit this, CF seems fix this??..
+						// if (remoteChunkCount > 20000) {
+						// 	// cf one package is 4096 byte(4kb),  4096 * 20000 = 80M
+						// 	await delay(1);
+						// }
+						webSocket.send(chunk);
+					}
+				},
+				close() {
+					log(`remoteConnection!.readable is close with hasIncomingData is ${hasIncomingData}`);
+					// safeCloseWebSocket(webSocket); // no need server close websocket frist for some case will casue HTTP ERR_CONTENT_LENGTH_MISMATCH issue, client will send close event anyway.
+				},
+				abort(reason) {
+					console.error(`remoteConnection!.readable abort`, reason);
+				},
+			})
+		)
+		.catch((error) => {
+			console.error(
+				`remoteSocketToWS has exception `,
+				error.stack || error
+			);
+			safeCloseWebSocket(webSocket);
+		});
+
+	// seems is cf connect socket have error,
+	// 1. Socket.closed will have error
+	// 2. Socket.readable will be close without any data coming
+	if (hasIncomingData === false && retry) {
+		log(`retry`)
+		retry();
+	}
+}
+
+/**
+ * Decodes a base64 string into an ArrayBuffer.
+ * @param {string} base64Str The base64 string to decode.
+ * @returns {{earlyData: ArrayBuffer|null, error: Error|null}} An object containing the decoded ArrayBuffer or null if there was an error, and any error that occurred during decoding or null if there was no error.
+ */
+function base64ToArrayBuffer(base64Str) {
+	if (!base64Str) {
+		return { earlyData: null, error: null };
+	}
+	try {
+		// go use modified Base64 for URL rfc4648 which js atob not support
+		base64Str = base64Str.replace(/-/g, '+').replace(/_/g, '/');
+		const decode = atob(base64Str);
+		const arryBuffer = Uint8Array.from(decode, (c) => c.charCodeAt(0));
+		return { earlyData: arryBuffer.buffer, error: null };
+	} catch (error) {
+		return { earlyData: null, error };
+	}
+}
+
+/**
+ * Checks if a given string is a valid UUID.
+ * Note: This is not a real UUID validation.
+ * @param {string} uuid The string to validate as a UUID.
+ * @returns {boolean} True if the string is a valid UUID, false otherwise.
+ */
+function isValidUUID(uuid) {
+	const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+	return uuidRegex.test(uuid);
+}
+
+const WS_READY_STATE_OPEN = 1;
+const WS_READY_STATE_CLOSING = 2;
+/**
+ * Closes a WebSocket connection safely without throwing exceptions.
+ * @param {import("@cloudflare/workers-types").WebSocket} socket The WebSocket connection to close.
+ */
+function safeCloseWebSocket(socket) {
+	try {
+		if (socket.readyState === WS_READY_STATE_OPEN || socket.readyState === WS_READY_STATE_CLOSING) {
+			socket.close();
+		}
+	} catch (error) {
+		console.error('safeCloseWebSocket error', error);
+	}
+}
+
+const byteToHex = [];
+
+for (let i = 0; i < 256; ++i) {
+	byteToHex.push((i + 256).toString(16).slice(1));
+}
+
+function unsafeStringify(arr, offset = 0) {
+	return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
+}
+
+function stringify(arr, offset = 0) {
+	const uuid = unsafeStringify(arr, offset);
+	if (!isValidUUID(uuid)) {
+		throw TypeError("Stringified UUID is invalid");
+	}
+	return uuid;
+}
+
+
+/**
+ * Handles outbound UDP traffic by transforming the data into DNS queries and sending them over a WebSocket connection.
+ * @param {import("@cloudflare/workers-types").WebSocket} webSocket The WebSocket connection to send the DNS queries over.
+ * @param {ArrayBuffer} วเลสResponseHeader The วเลส response header.
+ * @param {(string) => void} log The logging function.
+ * @returns {{write: (chunk: Uint8Array) => void}} An object with a write method that accepts a Uint8Array chunk to write to the transform stream.
+ */
+async function handleUDPOutBound(webSocket, วเลสResponseHeader, log) {
+
+	let isวเลสHeaderSent = false;
+	const transformStream = new TransformStream({
+		start(controller) {
+
+		},
+		transform(chunk, controller) {
+			// udp message 2 byte is the the length of udp data
+			// TODO: this should have bug, beacsue maybe udp chunk can be in two websocket message
+			for (let index = 0; index < chunk.byteLength;) {
+				const lengthBuffer = chunk.slice(index, index + 2);
+				const udpPakcetLength = new DataView(lengthBuffer).getUint16(0);
+				const udpData = new Uint8Array(
+					chunk.slice(index + 2, index + 2 + udpPakcetLength)
+				);
+				index = index + 2 + udpPakcetLength;
+				controller.enqueue(udpData);
+			}
+		},
+		flush(controller) {
+		}
+	});
+
+	// only handle dns udp for now
+	transformStream.readable.pipeTo(new WritableStream({
+		async write(chunk) {
+			const resp = await fetch(dohURL, // dns server url
+				{
+					method: 'POST',
+					headers: {
+						'content-type': 'application/dns-message',
+					},
+					body: chunk,
+				})
+			const dnsQueryResult = await resp.arrayBuffer();
+			const udpSize = dnsQueryResult.byteLength;
+			// console.log([...new Uint8Array(dnsQueryResult)].map((x) => x.toString(16)));
+			const udpSizeBuffer = new Uint8Array([(udpSize >> 8) & 0xff, udpSize & 0xff]);
+			if (webSocket.readyState === WS_READY_STATE_OPEN) {
+				log(`doh success and dns message length is ${udpSize}`);
+				if (isวเลสHeaderSent) {
+					webSocket.send(await new Blob([udpSizeBuffer, dnsQueryResult]).arrayBuffer());
+				} else {
+					webSocket.send(await new Blob([วเลสResponseHeader, udpSizeBuffer, dnsQueryResult]).arrayBuffer());
+					isวเลสHeaderSent = true;
+				}
+			}
+		}
+	})).catch((error) => {
+		log('dns udp has error' + error)
+	});
+
+	const writer = transformStream.writable.getWriter();
+
+	return {
+		/**
+		 * 
+		 * @param {Uint8Array} chunk 
+		 */
+		write(chunk) {
+			writer.write(chunk);
+		}
+	};
+}
+
+const at = 'QA==';
+const pt = 'dmxlc3M=';
+const ed = 'RUR0dW5uZWw=';
+/**
+ *
+ * @param {string} userID - single or comma separated userIDs
+ * @param {string | null} hostName
+ * @returns {string}
+ */
+function getวเลสConfig(userIDs, hostName) {
+	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`;
+	const hashSeparator = "################################################################";
+
+	// Split the userIDs into an array
+	const userIDArray = userIDs.split(",");
+
+	// Prepare output string for each userID
+	const output = userIDArray.map((userID) => {
+		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+		const วเลสSec = atob(pt) + '://' + userID + atob(at) + พร็อกซีไอพี + commonUrlPart;
+		return `<h2>UUID: ${userID}</h2>${hashSeparator}\nv2ray default ip
+---------------------------------------------------------------
+${วเลสMain}
+<button onclick='copyToClipboard("${วเลสMain}")'><i class="fa fa-clipboard"></i> Copy วเลสMain</button>
+---------------------------------------------------------------
+v2ray with bestip
+---------------------------------------------------------------
+${วเลสSec}
+<button onclick='copyToClipboard("${วเลสSec}")'><i class="fa fa-clipboard"></i> Copy วเลสSec</button>
+---------------------------------------------------------------`;
+	}).join('\n');
+	const sublink = `https://${hostName}/sub/${userIDArray[0]}?format=clash`
+	const subbestip = `https://${hostName}/bestip/${userIDArray[0]}`;
+	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
+	// Prepare header string
+	const header = `
+<p align='center'><img src='https://cloudflare-ipfs.com/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky' alt='图片描述' style='margin-bottom: -50px;'>
+<b style='font-size: 15px;'>Welcome! This function generates configuration for วเลส protocol. If you found this useful, please check our GitHub project for more:</b>
+<b style='font-size: 15px;'>欢迎！这是生成 วเลส 协议的配置。如果您发现这个项目很好用，请查看我们的 GitHub 项目给我一个star：</b>
+<a href='https://github.com/3Kmfi6HP/EDtunnel' target='_blank'>EDtunnel - https://github.com/3Kmfi6HP/EDtunnel</a>
+<iframe src='https://ghbtns.com/github-btn.html?user=USERNAME&repo=REPOSITORY&type=star&count=true&size=large' frameborder='0' scrolling='0' width='170' height='30' title='GitHub'></iframe>
+<a href='//${hostName}/sub/${userIDArray[0]}' target='_blank'>วเลส 节点订阅连接</a>
+<a href='clash://install-config?url=${encodeURIComponent(`https://${hostName}/sub/${userIDArray[0]}?format=clash`)}}' target='_blank'>Clash for Windows 节点订阅连接</a>
+<a href='${clash_link}' target='_blank'>Clash 节点订阅连接</a>
+<a href='${subbestip}' target='_blank'>优选IP自动节点订阅</a>
+<a href='clash://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>Clash优选IP自动</a>
+<a href='sing-box://import-remote-profile?url=${encodeURIComponent(subbestip)}' target='_blank'>singbox优选IP自动</a>
+<a href='sn://subscription?url=${encodeURIComponent(subbestip)}' target='_blank'>nekobox优选IP自动</a>
+<a href='v2rayng://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>v2rayNG优选IP自动</a></p>`;
+
+	// HTML Head with CSS and FontAwesome library
+	const htmlHead = `
+  <head>
+	<title>EDtunnel: วเลส configuration</title>
+	<meta name='description' content='This is a tool for generating วเลส protocol configurations. Give us a star on GitHub https://github.com/3Kmfi6HP/EDtunnel if you found it useful!'>
+	<meta name='keywords' content='EDtunnel, cloudflare pages, cloudflare worker, severless'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta property='og:site_name' content='EDtunnel: วเลส configuration' />
+	<meta property='og:type' content='website' />
+	<meta property='og:title' content='EDtunnel - วเลส configuration and subscribe output' />
+	<meta property='og:description' content='Use cloudflare pages and worker severless to implement วเลส protocol' />
+	<meta property='og:url' content='https://${hostName}/' />
+	<meta property='og:image' content='https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(`วเลส://${userIDs.split(",")[0]}@${hostName}${commonUrlPart}`)}' />
+	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:title' content='EDtunnel - วเลส configuration and subscribe output' />
+	<meta name='twitter:description' content='Use cloudflare pages and worker severless to implement วเลส protocol' />
+	<meta name='twitter:url' content='https://${hostName}/' />
+	<meta name='twitter:image' content='https://cloudflare-ipfs.com/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky' />
+	<meta property='og:image:width' content='1500' />
+	<meta property='og:image:height' content='1500' />
+
+	<style>
+	body {
+	  font-family: Arial, sans-serif;
+	  background-color: #f0f0f0;
+	  color: #333;
+	  padding: 10px;
+	}
+
+	a {
+	  color: #1a0dab;
+	  text-decoration: none;
+	}
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
+
+	pre {
+	  white-space: pre-wrap;
+	  word-wrap: break-word;
+	  background-color: #fff;
+	  border: 1px solid #ddd;
+	  padding: 15px;
+	  margin: 10px 0;
+	}
+	/* Dark mode */
+	@media (prefers-color-scheme: dark) {
+	  body {
+		background-color: #333;
+		color: #f0f0f0;
+	  }
+
+	  a {
+		color: #9db4ff;
+	  }
+
+	  pre {
+		background-color: #282a36;
+		border-color: #6272a4;
+	  }
+	}
+	</style>
+
+	<!-- Add FontAwesome library -->
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  </head>
+  `;
+
+	// Join output with newlines, wrap inside <html> and <body>
+	return `
+  <html>
+  ${htmlHead}
+  <body>
+  <pre style='background-color: transparent; border: none;'>${header}</pre>
+  <pre>${output}</pre>
+  </body>
+  <script>
+	function copyToClipboard(text) {
+	  navigator.clipboard.writeText(text)
+		.then(() => {
+		  alert("Copied to clipboard");
+		})
+		.catch((err) => {
+		  console.error("Failed to copy to clipboard:", err);
+		});
+	}
+  </script>
+  </html>`;
+}
+
+const เซ็ตพอร์ตHttp = new Set([80, 8080, 8880, 2052, 2086, 2095, 2082]);
+const เซ็ตพอร์ตHttps = new Set([443, 8443, 2053, 2096, 2087, 2083]);
+
+function สร้างวเลสSub(ไอดีผู้ใช้_เส้นทาง, ชื่อโฮสต์) {
+	const อาร์เรย์ไอดีผู้ใช้ = ไอดีผู้ใช้_เส้นทาง.includes(',') ? ไอดีผู้ใช้_เส้นทาง.split(',') : [ไอดีผู้ใช้_เส้นทาง];
+	const ส่วนUrlทั่วไปHttp = `?encryption=none&security=none&fp=random&type=ws&host=${ชื่อโฮสต์}&path=%2F%3Fed%3D2048#`;
+	const ส่วนUrlทั่วไปHttps = `?encryption=none&security=tls&sni=${ชื่อโฮสต์}&fp=random&type=ws&host=${ชื่อโฮสต์}&path=%2F%3Fed%3D2048#`;
+
+	const ผลลัพธ์ = อาร์เรย์ไอดีผู้ใช้.flatMap((ไอดีผู้ใช้) => {
+		const การกำหนดค่าHttp = Array.from(เซ็ตพอร์ตHttp).flatMap((พอร์ต) => {
+			if (!ชื่อโฮสต์.includes('pages.dev')) {
+				const ส่วนUrl = `${ชื่อโฮสต์}-HTTP-${พอร์ต}`;
+				const วเลสหลักHttp = atob(pt) + '://' + ไอดีผู้ใช้ + atob(at) + ชื่อโฮสต์ + ':' + พอร์ต + ส่วนUrlทั่วไปHttp + ส่วนUrl;
+				return พร็อกซีไอพีs.flatMap((พร็อกซีไอพี) => {
+					const วเลสรองHttp = atob(pt) + '://' + ไอดีผู้ใช้ + atob(at) + พร็อกซีไอพี + ':' + พอร์ต + ส่วนUrlทั่วไปHttp + ส่วนUrl + '-' + พร็อกซีไอพี + '-' + atob(ed);
+					return [วเลสหลักHttp, วเลสรองHttp];
+				});
+			}
+			return [];
+		});
+
+		const การกำหนดค่าHttps = Array.from(เซ็ตพอร์ตHttps).flatMap((พอร์ต) => {
+			const ส่วนUrl = `${ชื่อโฮสต์}-HTTPS-${พอร์ต}`;
+			const วเลสหลักHttps = atob(pt) + '://' + ไอดีผู้ใช้ + atob(at) + ชื่อโฮสต์ + ':' + พอร์ต + ส่วนUrlทั่วไปHttps + ส่วนUrl;
+			return พร็อกซีไอพีs.flatMap((พร็อกซีไอพี) => {
+				const วเลสรองHttps = atob(pt) + '://' + ไอดีผู้ใช้ + atob(at) + พร็อกซีไอพี + ':' + พอร์ต + ส่วนUrlทั่วไปHttps + ส่วนUrl + '-' + พร็อกซีไอพี + '-' + atob(ed);
+				return [วเลสหลักHttps, วเลสรองHttps];
+			});
+		});
+
+		return [...การกำหนดค่าHttp, ...การกำหนดค่าHttps];
+	});
+
+	return ผลลัพธ์.join('\n');
+}
+
+const cn_hostnames = [
+	'weibo.com',                // Weibo - A popular social media platform
+	'www.baidu.com',            // Baidu - The largest search engine in China
+	'www.qq.com',               // QQ - A widely used instant messaging platform
+	'www.taobao.com',           // Taobao - An e-commerce website owned by Alibaba Group
+	'www.jd.com',               // JD.com - One of the largest online retailers in China
+	'www.sina.com.cn',          // Sina - A Chinese online media company
+	'www.sohu.com',             // Sohu - A Chinese internet service provider
+	'www.tmall.com',            // Tmall - An online retail platform owned by Alibaba Group
+	'www.163.com',              // NetEase Mail - One of the major email providers in China
+	'www.zhihu.com',            // Zhihu - A popular question-and-answer website
+	'www.youku.com',            // Youku - A Chinese video sharing platform
+	'www.xinhuanet.com',        // Xinhua News Agency - Official news agency of China
+	'www.douban.com',           // Douban - A Chinese social networking service
+	'www.meituan.com',          // Meituan - A Chinese group buying website for local services
+	'www.toutiao.com',          // Toutiao - A news and information content platform
+	'www.ifeng.com',            // iFeng - A popular news website in China
+	'www.autohome.com.cn',      // Autohome - A leading Chinese automobile online platform
+	'www.360.cn',               // 360 - A Chinese internet security company
+	'www.douyin.com',           // Douyin - A Chinese short video platform
+	'www.kuaidi100.com',        // Kuaidi100 - A Chinese express delivery tracking service
+	'www.wechat.com',           // WeChat - A popular messaging and social media app
+	'www.csdn.net',             // CSDN - A Chinese technology community website
+	'www.imgo.tv',              // ImgoTV - A Chinese live streaming platform
+	'www.aliyun.com',           // Alibaba Cloud - A Chinese cloud computing company
+	'www.eyny.com',             // Eyny - A Chinese multimedia resource-sharing website
+	'www.mgtv.com',             // MGTV - A Chinese online video platform
+	'www.xunlei.com',           // Xunlei - A Chinese download manager and torrent client
+	'www.hao123.com',           // Hao123 - A Chinese web directory service
+	'www.bilibili.com',         // Bilibili - A Chinese video sharing and streaming platform
+	'www.youth.cn',             // Youth.cn - A China Youth Daily news portal
+	'www.hupu.com',             // Hupu - A Chinese sports community and forum
+	'www.youzu.com',            // Youzu Interactive - A Chinese game developer and publisher
+	'www.panda.tv',             // Panda TV - A Chinese live streaming platform
+	'www.tudou.com',            // Tudou - A Chinese video-sharing website
+	'www.zol.com.cn',           // ZOL - A Chinese electronics and gadgets website
+	'www.toutiao.io',           // Toutiao - A news and information app
+	'www.tiktok.com',           // TikTok - A Chinese short-form video app
+	'www.netease.com',          // NetEase - A Chinese internet technology company
+	'www.cnki.net',             // CNKI - China National Knowledge Infrastructure, an information aggregator
+	'www.zhibo8.cc',            // Zhibo8 - A website providing live sports streams
+	'www.zhangzishi.cc',        // Zhangzishi - Personal website of Zhang Zishi, a public intellectual in China
+	'www.xueqiu.com',           // Xueqiu - A Chinese online social platform for investors and traders
+	'www.qqgongyi.com',         // QQ Gongyi - Tencent's charitable foundation platform
+	'www.ximalaya.com',         // Ximalaya - A Chinese online audio platform
+	'www.dianping.com',         // Dianping - A Chinese online platform for finding and reviewing local businesses
+	'www.suning.com',           // Suning - A leading Chinese online retailer
+	'www.zhaopin.com',          // Zhaopin - A Chinese job recruitment platform
+	'www.jianshu.com',          // Jianshu - A Chinese online writing platform
+	'www.mafengwo.cn',          // Mafengwo - A Chinese travel information sharing platform
+	'www.51cto.com',            // 51CTO - A Chinese IT technical community website
+	'www.qidian.com',           // Qidian - A Chinese web novel platform
+	'www.ctrip.com',            // Ctrip - A Chinese travel services provider
+	'www.pconline.com.cn',      // PConline - A Chinese technology news and review website
+	'www.cnzz.com',             // CNZZ - A Chinese web analytics service provider
+	'www.telegraph.co.uk',      // The Telegraph - A British newspaper website	
+	'www.ynet.com',             // Ynet - A Chinese news portal
+	'www.ted.com',              // TED - A platform for ideas worth spreading
+	'www.renren.com',           // Renren - A Chinese social networking service
+	'www.pptv.com',             // PPTV - A Chinese online video streaming platform
+	'www.liepin.com',           // Liepin - A Chinese online recruitment website
+	'www.881903.com',           // 881903 - A Hong Kong radio station website
+	'www.aipai.com',            // Aipai - A Chinese online video sharing platform
+	'www.ttpaihang.com',        // Ttpaihang - A Chinese celebrity popularity ranking website
+	'www.quyaoya.com',          // Quyaoya - A Chinese online ticketing platform
+	'www.91.com',               // 91.com - A Chinese software download website
+	'www.dianyou.cn',           // Dianyou - A Chinese game information website
+	'www.tmtpost.com',          // TMTPost - A Chinese technology media platform
+	'www.douban.com',           // Douban - A Chinese social networking service
+	'www.guancha.cn',           // Guancha - A Chinese news and commentary website
+	'www.so.com',               // So.com - A Chinese search engine
+	'www.58.com',               // 58.com - A Chinese classified advertising website
+	'www.cnblogs.com',          // Cnblogs - A Chinese technology blog community
+	'www.cntv.cn',              // CCTV - China Central Television official website
+	'www.secoo.com',            // Secoo - A Chinese luxury e-commerce platform
+];
